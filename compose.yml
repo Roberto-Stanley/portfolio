@@ -1,0 +1,11 @@
+services:
+  app:
+    container_name: portfolio
+    build: .
+    ports:
+      - "3002:3000"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /var/www/project
