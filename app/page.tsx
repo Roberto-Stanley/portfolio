@@ -4,9 +4,12 @@ export default function Home() {
       <main>
         <section className="w-full h-[52rem] bg-[url('/img/background-hero.jpg')] bg-no-repeat bg-cover bg-center">
           <div className="flex h-full w-full bg-black bg-opacity-50 items-center flex-col justify-center backdrop-blur-sm">
-            <h1 className="color-white text-4xl font-medium font-fireCode mb-6">
-              Roberto Reyes
-            </h1>
+            <div className="flex items-center space-x-1">
+              <h1 className="color-white text-4xl font-medium font-fireCode mb-6 tracking-widest overflow-hidden whitespace-nowrap border-r-4 border-white animate-typing">
+                Roberto Reyes
+              </h1>
+              <span className="text-xl font-bold border-r-4 border-white animate-blink"></span>
+            </div>
 
             <h3>
               Get ready to turn your<span>ideas</span>into <span>reality</span>
@@ -35,8 +38,12 @@ export default function Home() {
                   className="w-ful h-full object-cover"
                 />
                 <div className="flex justify-center items-center">
-                  <div>
-                    6 <span>Successful years</span>
+                  <div className="flex justify-center gap-2">
+                    <span className="text-white text-6xl font-extrabold leading-10">
+                      6
+                    </span>
+                    {/* TODO: set the correct color to the text */}
+                    <div className="text-xl leading-10">Successful years</div>
                   </div>
                 </div>
               </div>

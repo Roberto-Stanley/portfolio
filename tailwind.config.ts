@@ -15,6 +15,21 @@ export default {
       fontFamily: {
         fireCode: ["Fira Code", "monospace"],
       },
+
+      keyframes: {
+        typing: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+      },
+      animation: {
+        typing: "typing 4s steps(25, end) forwards",
+        blink: "blink 0.2s step-end infinite",
+      },
     },
   },
   plugins: [],
