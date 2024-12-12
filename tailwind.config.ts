@@ -14,6 +14,7 @@ export default {
       },
       fontFamily: {
         fireCode: ["Fira Code", "monospace"],
+        rougeScript: ["Rouge Script", "cursive"],
       },
 
       keyframes: {
