@@ -25,9 +25,14 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
         },
+        hideCursor: {
+          "0%": { borderColor: "white" },
+          "100%": { borderColor: "transparent" },
+        },
       },
       animation: {
-        typing: "typing 4s steps(25, end) forwards",
+        typing:
+          "typing 3.5s steps(45, end) forwards, hideCursor 0.5s forwards 4s",
         blink: "blink 0.2s step-end infinite",
       },
     },

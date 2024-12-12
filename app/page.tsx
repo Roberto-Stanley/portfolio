@@ -5,10 +5,10 @@ export default function Home() {
         <section className="w-full h-[52rem] bg-[url('/img/background-hero.jpg')] bg-no-repeat bg-cover bg-center">
           <div className="flex h-full w-full bg-black bg-opacity-50 items-center flex-col justify-center backdrop-blur-sm">
             <div className="flex items-center space-x-1">
-              <h1 className="color-white text-4xl font-medium font-fireCode mb-6 tracking-widest overflow-hidden whitespace-nowrap border-r-4 border-white animate-typing">
+              <h1 className="color-white text-4xl font-medium font-fireCode mb-6 tracking-widest overflow-hidden whitespace-nowrap border-r-4 animate-typing">
                 Roberto Reyes
               </h1>
-              <span className="text-xl font-bold border-r-4 border-white animate-blink"></span>
+              {/* <span className="text-xl font-bold border-r-4 border-black animate-blink "></span> */}
             </div>
 
             <h3>
