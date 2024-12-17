@@ -11,6 +11,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        backgroundAlt: "var(--background-alt)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
       },
       fontFamily: {
         fireCode: ["Fira Code", "monospace"],
