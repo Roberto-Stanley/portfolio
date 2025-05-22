@@ -6,11 +6,19 @@
 @tailwind utilities;
 
 :root {
-  --background: #070827;
+  --background: #000;
   --foreground: #ffffffb3;
   --background-alt: #21213c;
-  --primary: #51aad3;
+  --primary: #4B7BFF;
   --secondary: #8cb7cb;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* @media (prefers-color-scheme: dark) {
