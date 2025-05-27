@@ -1,0 +1,8 @@
+.git
+Dockerfile
+.qodo
+.gitignore
+.dockerignore
+node_modules
+.next
+compose.yml
