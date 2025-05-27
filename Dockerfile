@@ -1,16 +1,30 @@
-FROM node:20.14.0
+FROM node:20.14.0 AS base
 
-RUN mkdir -p /var/www/project
-WORKDIR /var/www/project
+WORKDIR /app
 
-RUN apt update && apt dist-upgrade -y 
+COPY ./package*.json ./
 
-COPY ./package*.json /var/www/project/
+COPY . . 
 
-RUN npm install && npm cache clean --force
+FROM base AS dev
 
-COPY . .
+ENV NODE_ENV=development
+
+RUN npm install
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "dev" ]
+CMD ["npm", "run", "dev"]
+
+
+FROM base AS production
+
+ENV NODE_ENV=production
+
+RUN npm ci
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "start" ]

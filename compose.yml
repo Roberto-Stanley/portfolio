@@ -1,11 +1,11 @@
+name: porfolio
 services:
   app:
     container_name: portfolio
-    build: .
+    build:
+      target: dev
     ports:
       - "3002:3000"
-    develop:
-      watch:
-        - action: sync
-          path: .
-          target: /var/www/project
+    volumes:
+      - ./:/app
+      - /app/node_modules
