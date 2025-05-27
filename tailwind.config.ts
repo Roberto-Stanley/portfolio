@@ -16,8 +16,9 @@ export default {
         secondary: "var(--secondary)",
       },
       fontFamily: {
-        fireCode: ["Fira Code", "monospace"],
-        rougeScript: ["Rouge Script", "cursive"],
+        primary: ["Roboto", "serif"],
+        second: ["Fira Code", "monospace"],
+        alternative: ["Rouge Script", "cursive"],
       },
 
       keyframes: {
