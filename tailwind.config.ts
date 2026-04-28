@@ -14,11 +14,19 @@ export default {
         backgroundAlt: "var(--background-alt)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        "magic-mint": "#a3ffdc",
+        cards: "#21213c",
+        decorative: "#151856",
       },
       fontFamily: {
-        primary: ["Roboto", "serif"],
+        primary: ["Roboto", "sans-serif"],
         second: ["Fira Code", "monospace"],
+        fireCode: ["Fira Code", "monospace"],
         alternative: ["Rouge Script", "cursive"],
+        rougeScript: ["Rouge Script", "cursive"],
+      },
+      borderWidth: {
+        "3": "3px",
       },
 
       keyframes: {
@@ -34,11 +42,26 @@ export default {
           "0%": { borderColor: "white" },
           "100%": { borderColor: "transparent" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "orbital-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "orbital-counter-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(-360deg)" },
+        },
       },
       animation: {
         typing:
           "typing 3.5s steps(45, end) forwards, hideCursor 0.5s forwards 4s",
         blink: "blink 0.2s step-end infinite",
+        marquee: "marquee 30s linear infinite",
+        "orbital-spin": "orbital-spin 60s linear infinite",
+        "orbital-counter-spin": "orbital-counter-spin 20s linear infinite",
       },
     },
   },

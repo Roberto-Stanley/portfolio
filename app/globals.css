@@ -1,16 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Rouge+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,800;1,300&family=Rouge+Script&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #000;
+  --background: #070827;
   --foreground: #ffffffb3;
   --background-alt: #21213c;
-  --primary: #4B7BFF;
+  --primary: #4b7bff;
   --secondary: #8cb7cb;
+  /* Figma design tokens */
+  --decorative: #151856;
+  --decorative-2: #070827;
+  --cards: #21213c;
+  --default: #4b7bff;
+  --text: #ffffff;
+  --text-2: #b0b0b0;
+  --magic-mint-200: #a3ffdc;
+  --disabled: #3d3d3d;
 }
 
 *,
