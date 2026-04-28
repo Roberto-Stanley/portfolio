@@ -31,16 +31,16 @@ export default {
 
       keyframes: {
         typing: {
-          "0%": { width: "0%" },
-          "100%": { width: "100%" },
+          "0%": { width: "0" },
+          "100%": { width: "calc(13ch + 4px)" },
         },
         blink: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
         },
         hideCursor: {
-          "0%": { borderColor: "white" },
-          "100%": { borderColor: "transparent" },
+          "0%": { borderRightColor: "white" },
+          "100%": { borderRightColor: "transparent" },
         },
         marquee: {
           "0%": { transform: "translateX(0)" },
@@ -57,7 +57,7 @@ export default {
       },
       animation: {
         typing:
-          "typing 3.5s steps(45, end) forwards, hideCursor 0.5s forwards 4s",
+          "typing 3.5s steps(13, end) forwards, hideCursor 0.4s linear 3.5s forwards",
         blink: "blink 0.2s step-end infinite",
         marquee: "marquee 30s linear infinite",
         "orbital-spin": "orbital-spin 60s linear infinite",

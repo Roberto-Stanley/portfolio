@@ -5,13 +5,20 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 
 // Asset URLs from Figma (expire in 7 days — replace with /public assets for production)
-const HERO_BG = "https://www.figma.com/api/mcp/asset/c374c033-9ed1-48a2-9675-7ae194574476";
-const PROFILE_PHOTO = "https://www.figma.com/api/mcp/asset/260f0f98-4fd9-4a5b-9282-2f21d8b812bd";
-const CLOUD_BG = "https://www.figma.com/api/mcp/asset/eb934e93-89bc-45d4-8aaa-fc85d97623b8";
-const MOCKUP_LAPTOP = "https://www.figma.com/api/mcp/asset/6433b991-bce6-43ed-bc63-a7496e2fde1b";
-const MOCKUP_PHONE = "https://www.figma.com/api/mcp/asset/0993769b-7bcd-4acd-a536-71f719ebdffc";
-const MOCKUP_TABLET = "https://www.figma.com/api/mcp/asset/f09641f1-8765-4263-9a24-f1e6a8c1f098";
-const TOOLS_FRAME = "https://www.figma.com/api/mcp/asset/ddd47539-0a9e-48ca-b9c4-a63136eda1e8";
+const HERO_BG =
+  "https://www.figma.com/api/mcp/asset/c374c033-9ed1-48a2-9675-7ae194574476";
+const PROFILE_PHOTO =
+  "https://www.figma.com/api/mcp/asset/260f0f98-4fd9-4a5b-9282-2f21d8b812bd";
+const CLOUD_BG =
+  "https://www.figma.com/api/mcp/asset/eb934e93-89bc-45d4-8aaa-fc85d97623b8";
+const MOCKUP_LAPTOP =
+  "https://www.figma.com/api/mcp/asset/6433b991-bce6-43ed-bc63-a7496e2fde1b";
+const MOCKUP_PHONE =
+  "https://www.figma.com/api/mcp/asset/0993769b-7bcd-4acd-a536-71f719ebdffc";
+const MOCKUP_TABLET =
+  "https://www.figma.com/api/mcp/asset/f09641f1-8765-4263-9a24-f1e6a8c1f098";
+const TOOLS_FRAME =
+  "https://www.figma.com/api/mcp/asset/ddd47539-0a9e-48ca-b9c4-a63136eda1e8";
 
 // ─── Hero Section ────────────────────────────────────────────────────────────
 
@@ -19,10 +26,10 @@ function HeroSection() {
   return (
     <section className="relative h-[845px] overflow-hidden w-full">
       {/* Background image */}
-      <div className="absolute h-[845px] left-[-99px] top-0 w-[1502px]">
+      <div className="absolute h-[845px] top-0 w-full">
         <img
           alt=""
-          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
+          className="absolute inset-0 max-w-none object-cover pointer-events-none  size-full"
           src={HERO_BG}
         />
       </div>
@@ -33,18 +40,18 @@ function HeroSection() {
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4">
         {/* Name */}
-        <h1 className="font-second font-normal text-[32px] leading-10 text-white text-center whitespace-nowrap animate-typing overflow-hidden border-r-4 border-white">
+        <h1 className="font-second font-normal text-[40px] leading-10 text-white text-center whitespace-nowrap animate-typing overflow-hidden border-r-4 border-white">
           Roberto Reyes
         </h1>
 
         {/* Subtitle */}
-        <p className="font-primary font-normal text-[31.25px] leading-[var(--2xl,20px)] text-[#b0b0b0] text-center">
+        <p className="font-primary font-normal text-[32px] leading-[var(--2xl,20px)] text-[#b0b0b0] text-center">
           {`Get ready to turn your `}
-          <span className="bg-clip-text bg-gradient-to-b from-[#a3ffdc] to-[#90b1ff] not-italic font-alternative text-[24px] text-transparent leading-7">
+          <span className="bg-clip-text bg-gradient-to-b from-[#a3ffdc] to-[#90b1ff] not-italic font-alternative text-[40px] text-transparent leading-7">
             ideas
           </span>
           {` into `}
-          <span className="bg-clip-text bg-gradient-to-b from-[#a3ffdc] to-[#90b1ff] not-italic font-alternative text-[24px] text-transparent leading-7">
+          <span className="bg-clip-text bg-gradient-to-b from-[#a3ffdc] to-[#90b1ff] not-italic font-alternative text-[40px] text-transparent leading-7">
             reality
           </span>
         </p>
@@ -60,7 +67,10 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="flex gap-[37px] items-center justify-center py-16">
+    <section
+      id="about"
+      className="flex gap-[37px] items-center justify-center py-16"
+    >
       {/* Orbital decoration with profile photo + cloud label overlays */}
       <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
         <OrbitalDecoration
@@ -102,10 +112,11 @@ function AboutSection() {
         </div>
 
         <p className="font-primary font-normal text-xl leading-6 text-white w-full">
-          I am passionate about building excellent software that improves the lives of those around me.
-          I specialize in creating software for clients ranging from individuals and small-businesses
-          all the way to large enterprise corporations. What would you do if you had a software expert
-          available at your fingertips?
+          I am passionate about building excellent software that improves the
+          lives of those around me. I specialize in creating software for
+          clients ranging from individuals and small-businesses all the way to
+          large enterprise corporations. What would you do if you had a software
+          expert available at your fingertips?
         </p>
 
         <ProjectButton label="Mis proyectos" href="#projects" />
@@ -115,13 +126,25 @@ function AboutSection() {
 }
 
 // Cloud label overlaid in the about section's inline-grid using ml/mt offsets
-function CloudLabel({ label, ml, mt }: { label: string; ml: number; mt: number }) {
+function CloudLabel({
+  label,
+  ml,
+  mt,
+}: {
+  label: string;
+  ml: number;
+  mt: number;
+}) {
   return (
     <div
       className="col-start-1 row-start-1 h-[49px] relative w-[108px]"
       style={{ marginLeft: ml, marginTop: mt }}
     >
-      <img alt="" className="absolute block inset-0 max-w-none size-full" src={CLOUD_BG} />
+      <img
+        alt=""
+        className="absolute block inset-0 max-w-none size-full"
+        src={CLOUD_BG}
+      />
       <p className="absolute font-alternative not-italic text-[12px] text-white text-center leading-4 inset-[30.61%_18.89%_36.21%_19.44%]">
         {label}
       </p>
@@ -134,8 +157,12 @@ function CloudLabel({ label, ml, mt }: { label: string; ml: number; mt: number }
 function ProjectSectionHeader({ subtitle }: { subtitle: string }) {
   return (
     <div className="flex flex-col gap-2 items-center text-center mb-8">
-      <h3 className="font-second font-normal text-[32px] leading-10 text-white">Proyectos</h3>
-      <p className="font-primary font-normal text-xl leading-6 text-[#b0b0b0]">{subtitle}</p>
+      <h3 className="font-second font-normal text-[32px] leading-10 text-white">
+        Proyectos
+      </h3>
+      <p className="font-primary font-normal text-xl leading-6 text-[#b0b0b0]">
+        {subtitle}
+      </p>
     </div>
   );
 }
@@ -219,13 +246,21 @@ function ToolsSection() {
         <div className="relative flex items-center justify-center size-[136px]">
           <div className="-rotate-[87.36deg] flex-none">
             <div className="relative size-[130px]">
-              <img alt="" className="absolute block inset-0 max-w-none size-full" src={TOOLS_FRAME} />
+              <img
+                alt=""
+                className="absolute block inset-0 max-w-none size-full"
+                src={TOOLS_FRAME}
+              />
             </div>
           </div>
         </div>
         {/* Tools cloud label */}
         <div className="absolute h-[49px] w-[108px]">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" src={CLOUD_BG} />
+          <img
+            alt=""
+            className="absolute block inset-0 max-w-none size-full"
+            src={CLOUD_BG}
+          />
           <p className="absolute font-alternative not-italic text-[12px] text-white text-center leading-4 inset-[30.61%_18.89%_36.21%_19.44%]">
             Tools
           </p>

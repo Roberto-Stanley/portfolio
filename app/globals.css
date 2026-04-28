@@ -20,6 +20,18 @@
   --text-2: #b0b0b0;
   --magic-mint-200: #a3ffdc;
   --disabled: #3d3d3d;
+  /* Font families */
+  --primary-font-family: "Roboto", sans-serif;
+  --second-font-family: "Fira Code", monospace;
+  --decoration-font-family: "Rouge Script", cursive; /* Abalone Smile substitute */
+  /* Type scale */
+  --xm: 12px;
+  --m: 16px;
+  --l: 20px;
+  --xl: 24px;
+  --2xl: 28px;
+  --3xl: 32px;
+  --4xl: 40px;
 }
 
 *,
