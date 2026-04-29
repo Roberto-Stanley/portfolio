@@ -3,13 +3,9 @@
 import Image from "next/image";
 import { useState } from "react";
 
-// Asset URLs from Figma (expire in 7 days — replace with /public assets for production)
-const TESTIMONIAL_PHOTO =
-  "https://www.figma.com/api/mcp/asset/c4f74ca1-75bd-476c-ae54-c71051615e75";
-const ARROW_LINE =
-  "https://www.figma.com/api/mcp/asset/5ed9ae0f-30b2-4911-842e-df55fc59d295";
-const ARROW_HEAD =
-  "https://www.figma.com/api/mcp/asset/56bb3a17-ecf6-4bab-a982-101f2f4ddee0";
+const TESTIMONIAL_PHOTO = "/img/testimonial-photo.jpg";
+const ARROW_LINE = "/icons/arrow-line.svg";
+const ARROW_HEAD = "/icons/arrow-head.svg";
 
 const testimonials = [
   {
@@ -39,6 +35,7 @@ function NavArrow({
         <div className="absolute bottom-[20.83%] left-1/2 right-1/2 top-[20.83%]">
           <div className="absolute inset-[-8.16%_-1px]">
             <Image
+              fill
               alt=""
               className="block max-w-none size-full"
               src={ARROW_LINE}
@@ -48,6 +45,7 @@ function NavArrow({
         <div className="absolute bottom-[20.83%] left-[20.83%] right-[20.83%] top-1/2">
           <div className="absolute inset-[-16.33%_-8.16%]">
             <Image
+              fill
               alt=""
               className="block max-w-none size-full"
               src={ARROW_HEAD}

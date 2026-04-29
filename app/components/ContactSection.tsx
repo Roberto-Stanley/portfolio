@@ -4,19 +4,12 @@ import { useState } from "react";
 import ProjectButton from "./ProjectButton";
 import Image from "next/image";
 
-// Asset URLs from Figma (expire in 7 days — replace with /public assets for production)
-const ICON_PHONE_1 =
-  "https://www.figma.com/api/mcp/asset/b65d8680-5346-4783-a36e-901ea83f2741";
-const ICON_PHONE_2 =
-  "https://www.figma.com/api/mcp/asset/b520d4c7-6045-4a55-9e81-b0af4e024d30";
-const ICON_PHONE_3 =
-  "https://www.figma.com/api/mcp/asset/3b479cb5-7f6f-4211-8a06-e3f0c0ee3dae";
-const ICON_EMAIL =
-  "https://www.figma.com/api/mcp/asset/46393e3f-486e-4535-a9c5-42b32fc4da8e";
-const ICON_LINKEDIN_1 =
-  "https://www.figma.com/api/mcp/asset/e40b56a4-c686-44c3-b6b5-e0a67c041b41";
-const ICON_LINKEDIN_2 =
-  "https://www.figma.com/api/mcp/asset/310cef57-a9e6-456f-bb76-d4e661fab431";
+const ICON_PHONE_1 = "/icons/icon-phone-1.svg";
+const ICON_PHONE_2 = "/icons/icon-phone-2.svg";
+const ICON_PHONE_3 = "/icons/icon-phone-3.svg";
+const ICON_EMAIL = "/icons/icon-email.svg";
+const ICON_LINKEDIN_1 = "/icons/icon-linkedin-1.svg";
+const ICON_LINKEDIN_2 = "/icons/icon-linkedin-2.svg";
 
 function InputField({
   label,
@@ -70,6 +63,7 @@ export default function ContactSection() {
               <div className="absolute inset-[33.33%_8.33%_12.5%_41.67%]">
                 <div className="absolute inset-[-6.15%_-6.67%]">
                   <Image
+                    fill
                     alt=""
                     className="block max-w-none size-full"
                     src={ICON_PHONE_1}
@@ -79,6 +73,7 @@ export default function ContactSection() {
               <div className="absolute bottom-[12.5%] left-[8.33%] right-3/4 top-[37.5%]">
                 <div className="absolute inset-[-4.44%_-13.33%]">
                   <Image
+                    fill
                     alt=""
                     className="block max-w-none size-full"
                     src={ICON_PHONE_2}
@@ -88,6 +83,7 @@ export default function ContactSection() {
               <div className="absolute bottom-3/4 left-[8.33%] right-3/4 top-[8.33%]">
                 <div className="absolute inset-[-13.33%]">
                   <Image
+                    fill
                     alt=""
                     className="block max-w-none size-full"
                     src={ICON_PHONE_3}
@@ -101,6 +97,7 @@ export default function ContactSection() {
               <div className="absolute inset-[12.5%]">
                 <div className="absolute inset-[-4.44%]">
                   <Image
+                    fill
                     alt=""
                     className="block max-w-none size-full"
                     src={ICON_EMAIL}
@@ -114,6 +111,7 @@ export default function ContactSection() {
               <div className="absolute inset-[16.67%_8.33%]">
                 <div className="absolute inset-[-5%_-4%]">
                   <Image
+                    fill
                     alt=""
                     className="block max-w-none size-full"
                     src={ICON_LINKEDIN_1}
@@ -123,6 +121,7 @@ export default function ContactSection() {
               <div className="absolute bottom-[45.83%] left-[8.33%] right-[8.33%] top-1/4">
                 <div className="absolute inset-[-11.43%_-4%]">
                   <Image
+                    fill
                     alt=""
                     className="block max-w-none size-full"
                     src={ICON_LINKEDIN_2}

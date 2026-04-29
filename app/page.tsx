@@ -5,21 +5,13 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 import Image from "next/image";
 
-// Asset URLs from Figma (expire in 7 days — replace with /public assets for production)
-const HERO_BG =
-  "https://www.figma.com/api/mcp/asset/c374c033-9ed1-48a2-9675-7ae194574476";
-const PROFILE_PHOTO =
-  "https://www.figma.com/api/mcp/asset/260f0f98-4fd9-4a5b-9282-2f21d8b812bd";
-const CLOUD_BG =
-  "https://www.figma.com/api/mcp/asset/eb934e93-89bc-45d4-8aaa-fc85d97623b8";
-const MOCKUP_LAPTOP =
-  "https://www.figma.com/api/mcp/asset/6433b991-bce6-43ed-bc63-a7496e2fde1b";
-const MOCKUP_PHONE =
-  "https://www.figma.com/api/mcp/asset/0993769b-7bcd-4acd-a536-71f719ebdffc";
-const MOCKUP_TABLET =
-  "https://www.figma.com/api/mcp/asset/f09641f1-8765-4263-9a24-f1e6a8c1f098";
-const TOOLS_FRAME =
-  "https://www.figma.com/api/mcp/asset/ddd47539-0a9e-48ca-b9c4-a63136eda1e8";
+const HERO_BG = "/img/hero-bg.jpg";
+const PROFILE_PHOTO = "/img/profile-photo.jpg";
+const CLOUD_BG = "/icons/cloud-bg.svg";
+const MOCKUP_LAPTOP = "/img/mockup-laptop.png";
+const MOCKUP_PHONE = "/img/mockup-phone.png";
+const MOCKUP_TABLET = "/img/mockup-tablet.png";
+const TOOLS_FRAME = "/icons/tools-frame.svg";
 
 // ─── Hero Section ────────────────────────────────────────────────────────────
 
@@ -29,6 +21,8 @@ function HeroSection() {
       {/* Background image */}
       <div className="absolute h-[845px] top-0 w-full">
         <Image
+          width={1920}
+          height={1080}
           alt=""
           className="absolute inset-0 max-w-none object-cover pointer-events-none  size-full"
           src={HERO_BG}
@@ -85,6 +79,8 @@ function AboutSection() {
           <div className="absolute inset-[0_-0.2%_-17.79%_-6.16%] rounded-[8px]">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
               <Image
+                width={1920}
+                height={1080}
                 alt="Roberto Reyes"
                 className="absolute h-[139.13%] left-[-15.56%] max-w-none top-[-16.39%] w-[115.56%]"
                 src={PROFILE_PHOTO}
@@ -142,6 +138,8 @@ function CloudLabel({
       style={{ marginLeft: ml, marginTop: mt }}
     >
       <Image
+        width={108}
+        height={49}
         alt=""
         className="absolute block inset-0 max-w-none size-full"
         src={CLOUD_BG}
@@ -181,6 +179,8 @@ function ProjectsSection() {
           <OrbitalDecoration displayWidth={443} displayHeight={450} />
           <div className="relative h-[474px] w-[691px] shrink-0">
             <Image
+              width={691}
+              height={474}
               alt="E-commerce mockup"
               className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
               src={MOCKUP_LAPTOP}
@@ -196,6 +196,8 @@ function ProjectsSection() {
           <div className="flex items-center pr-16 shrink-0">
             <div className="relative h-[515px] w-[419px] mr-[-64px] shrink-0">
               <Image
+                width={419}
+                height={515}
                 alt="Web platform mockup"
                 className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
                 src={MOCKUP_PHONE}
@@ -224,6 +226,8 @@ function ProjectsSection() {
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="relative h-[547px] w-[773px]">
                 <Image
+                  width={773}
+                  height={547}
                   alt="Web platform tablet mockup"
                   className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
                   src={MOCKUP_TABLET}
@@ -248,6 +252,7 @@ function ToolsSection() {
           <div className="-rotate-[87.36deg] flex-none">
             <div className="relative size-[130px]">
               <Image
+                fill
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
                 src={TOOLS_FRAME}
@@ -258,6 +263,7 @@ function ToolsSection() {
         {/* Tools cloud label */}
         <div className="absolute h-[49px] w-[108px]">
           <Image
+            fill
             alt=""
             className="absolute block inset-0 max-w-none size-full"
             src={CLOUD_BG}
