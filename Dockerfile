@@ -1,4 +1,4 @@
-FROM node:20.14.0 AS base
+FROM node:24.15.0 AS base
 
 WORKDIR /app
 
@@ -19,20 +19,6 @@ USER node
 EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
-
-# ...existing code...
-FROM base AS production
-
-ENV NODE_ENV=production
-
-RUN npm ci
-
-RUN npm run build
-
-EXPOSE 3000
-
-CMD ["npm", "run", "dev"]
-
 
 FROM base AS production
 
