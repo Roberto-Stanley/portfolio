@@ -1,8 +1,14 @@
 // Asset URLs from Figma (expire in 7 days — replace with /public assets for production)
+
+import Image from "next/image";
+
 // Source: figma.com/design/FDVcfvHvZffyGVE7Y6TlLU node-id=1-2097
-const TECH_LOGO_A = "https://www.figma.com/api/mcp/asset/59641a39-44d0-4363-b51c-8af0233dff78"; // image 10
-const TECH_LOGO_B = "https://www.figma.com/api/mcp/asset/04abc1eb-fde5-47d8-a22a-f864aaa7093b"; // image 11
-const TECH_LOGO_C = "https://www.figma.com/api/mcp/asset/35b0ddfc-148f-4a0a-9155-5a6caa3a3fac"; // image 9
+const TECH_LOGO_A =
+  "https://www.figma.com/api/mcp/asset/59641a39-44d0-4363-b51c-8af0233dff78"; // image 10
+const TECH_LOGO_B =
+  "https://www.figma.com/api/mcp/asset/04abc1eb-fde5-47d8-a22a-f864aaa7093b"; // image 11
+const TECH_LOGO_C =
+  "https://www.figma.com/api/mcp/asset/35b0ddfc-148f-4a0a-9155-5a6caa3a3fac"; // image 9
 
 /**
  * Each badge entry: source image and its crop inset (percentage-based,
@@ -39,7 +45,7 @@ function Badge({ src, inset }: BadgeEntry) {
   return (
     <div className="bg-decorative h-[52px] overflow-hidden relative rounded-[40px] shrink-0 w-[69px]">
       <div className={`absolute ${inset}`}>
-        <img
+        <Image
           alt=""
           className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
           src={src}

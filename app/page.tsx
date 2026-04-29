@@ -3,6 +3,7 @@ import ProjectButton from "./components/ProjectButton";
 import TechBadgesStrip from "./components/TechBadgesStrip";
 import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
+import Image from "next/image";
 
 // Asset URLs from Figma (expire in 7 days — replace with /public assets for production)
 const HERO_BG =
@@ -27,7 +28,7 @@ function HeroSection() {
     <section className="relative h-[845px] overflow-hidden w-full">
       {/* Background image */}
       <div className="absolute h-[845px] top-0 w-full">
-        <img
+        <Image
           alt=""
           className="absolute inset-0 max-w-none object-cover pointer-events-none  size-full"
           src={HERO_BG}
@@ -83,7 +84,7 @@ function AboutSection() {
         <div className="bg-white col-start-1 row-start-1 ml-[253px] mt-[257px] overflow-hidden relative rounded-[128px] size-[211px]">
           <div className="absolute inset-[0_-0.2%_-17.79%_-6.16%] rounded-[8px]">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
-              <img
+              <Image
                 alt="Roberto Reyes"
                 className="absolute h-[139.13%] left-[-15.56%] max-w-none top-[-16.39%] w-[115.56%]"
                 src={PROFILE_PHOTO}
@@ -140,7 +141,7 @@ function CloudLabel({
       className="col-start-1 row-start-1 h-[49px] relative w-[108px]"
       style={{ marginLeft: ml, marginTop: mt }}
     >
-      <img
+      <Image
         alt=""
         className="absolute block inset-0 max-w-none size-full"
         src={CLOUD_BG}
@@ -179,7 +180,7 @@ function ProjectsSection() {
         <div className="flex gap-[25px] items-center w-full">
           <OrbitalDecoration displayWidth={443} displayHeight={450} />
           <div className="relative h-[474px] w-[691px] shrink-0">
-            <img
+            <Image
               alt="E-commerce mockup"
               className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
               src={MOCKUP_LAPTOP}
@@ -194,7 +195,7 @@ function ProjectsSection() {
         <div className="flex gap-2 items-center w-full">
           <div className="flex items-center pr-16 shrink-0">
             <div className="relative h-[515px] w-[419px] mr-[-64px] shrink-0">
-              <img
+              <Image
                 alt="Web platform mockup"
                 className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
                 src={MOCKUP_PHONE}
@@ -222,7 +223,7 @@ function ProjectsSection() {
           <div className="col-start-1 row-start-1 flex items-center justify-center ml-[403px] mt-[163px] h-[547px] w-[773px]">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="relative h-[547px] w-[773px]">
-                <img
+                <Image
                   alt="Web platform tablet mockup"
                   className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
                   src={MOCKUP_TABLET}
@@ -246,7 +247,7 @@ function ToolsSection() {
         <div className="relative flex items-center justify-center size-[136px]">
           <div className="-rotate-[87.36deg] flex-none">
             <div className="relative size-[130px]">
-              <img
+              <Image
                 alt=""
                 className="absolute block inset-0 max-w-none size-full"
                 src={TOOLS_FRAME}
@@ -256,7 +257,7 @@ function ToolsSection() {
         </div>
         {/* Tools cloud label */}
         <div className="absolute h-[49px] w-[108px]">
-          <img
+          <Image
             alt=""
             className="absolute block inset-0 max-w-none size-full"
             src={CLOUD_BG}

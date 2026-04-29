@@ -2,16 +2,31 @@
 
 import { useState } from "react";
 import ProjectButton from "./ProjectButton";
+import Image from "next/image";
 
 // Asset URLs from Figma (expire in 7 days — replace with /public assets for production)
-const ICON_PHONE_1 = "https://www.figma.com/api/mcp/asset/b65d8680-5346-4783-a36e-901ea83f2741";
-const ICON_PHONE_2 = "https://www.figma.com/api/mcp/asset/b520d4c7-6045-4a55-9e81-b0af4e024d30";
-const ICON_PHONE_3 = "https://www.figma.com/api/mcp/asset/3b479cb5-7f6f-4211-8a06-e3f0c0ee3dae";
-const ICON_EMAIL = "https://www.figma.com/api/mcp/asset/46393e3f-486e-4535-a9c5-42b32fc4da8e";
-const ICON_LINKEDIN_1 = "https://www.figma.com/api/mcp/asset/e40b56a4-c686-44c3-b6b5-e0a67c041b41";
-const ICON_LINKEDIN_2 = "https://www.figma.com/api/mcp/asset/310cef57-a9e6-456f-bb76-d4e661fab431";
+const ICON_PHONE_1 =
+  "https://www.figma.com/api/mcp/asset/b65d8680-5346-4783-a36e-901ea83f2741";
+const ICON_PHONE_2 =
+  "https://www.figma.com/api/mcp/asset/b520d4c7-6045-4a55-9e81-b0af4e024d30";
+const ICON_PHONE_3 =
+  "https://www.figma.com/api/mcp/asset/3b479cb5-7f6f-4211-8a06-e3f0c0ee3dae";
+const ICON_EMAIL =
+  "https://www.figma.com/api/mcp/asset/46393e3f-486e-4535-a9c5-42b32fc4da8e";
+const ICON_LINKEDIN_1 =
+  "https://www.figma.com/api/mcp/asset/e40b56a4-c686-44c3-b6b5-e0a67c041b41";
+const ICON_LINKEDIN_2 =
+  "https://www.figma.com/api/mcp/asset/310cef57-a9e6-456f-bb76-d4e661fab431";
 
-function InputField({ label, placeholder, type = "text" }: { label: string; placeholder: string; type?: string }) {
+function InputField({
+  label,
+  placeholder,
+  type = "text",
+}: {
+  label: string;
+  placeholder: string;
+  type?: string;
+}) {
   return (
     <div className="flex flex-col gap-1.5 h-[79px] items-start w-[244px]">
       <label className="font-primary font-normal leading-[29px] text-base text-white whitespace-nowrap">
@@ -28,6 +43,8 @@ function InputField({ label, placeholder, type = "text" }: { label: string; plac
 
 export default function ContactSection() {
   const [message, setMessage] = useState("");
+  const text =
+    "Let's connect via phone, email, or through the contact form to explore how I can help you achieve your goals with effective technological solutions.";
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -43,7 +60,7 @@ export default function ContactSection() {
               Get in touch!
             </h2>
             <p className="font-primary font-normal leading-6 text-[#b0b0b0] text-xl w-full">
-              Let's connect via phone, email, or through the contact form to explore how I can help you achieve your goals with effective technological solutions.
+              {text}
             </p>
           </div>
 
@@ -52,17 +69,29 @@ export default function ContactSection() {
             <div className="overflow-hidden relative shrink-0 size-[45px]">
               <div className="absolute inset-[33.33%_8.33%_12.5%_41.67%]">
                 <div className="absolute inset-[-6.15%_-6.67%]">
-                  <img alt="" className="block max-w-none size-full" src={ICON_PHONE_1} />
+                  <Image
+                    alt=""
+                    className="block max-w-none size-full"
+                    src={ICON_PHONE_1}
+                  />
                 </div>
               </div>
               <div className="absolute bottom-[12.5%] left-[8.33%] right-3/4 top-[37.5%]">
                 <div className="absolute inset-[-4.44%_-13.33%]">
-                  <img alt="" className="block max-w-none size-full" src={ICON_PHONE_2} />
+                  <Image
+                    alt=""
+                    className="block max-w-none size-full"
+                    src={ICON_PHONE_2}
+                  />
                 </div>
               </div>
               <div className="absolute bottom-3/4 left-[8.33%] right-3/4 top-[8.33%]">
                 <div className="absolute inset-[-13.33%]">
-                  <img alt="" className="block max-w-none size-full" src={ICON_PHONE_3} />
+                  <Image
+                    alt=""
+                    className="block max-w-none size-full"
+                    src={ICON_PHONE_3}
+                  />
                 </div>
               </div>
             </div>
@@ -71,7 +100,11 @@ export default function ContactSection() {
             <div className="overflow-hidden relative shrink-0 size-[45px]">
               <div className="absolute inset-[12.5%]">
                 <div className="absolute inset-[-4.44%]">
-                  <img alt="" className="block max-w-none size-full" src={ICON_EMAIL} />
+                  <Image
+                    alt=""
+                    className="block max-w-none size-full"
+                    src={ICON_EMAIL}
+                  />
                 </div>
               </div>
             </div>
@@ -80,12 +113,20 @@ export default function ContactSection() {
             <div className="overflow-hidden relative shrink-0 size-[45px]">
               <div className="absolute inset-[16.67%_8.33%]">
                 <div className="absolute inset-[-5%_-4%]">
-                  <img alt="" className="block max-w-none size-full" src={ICON_LINKEDIN_1} />
+                  <Image
+                    alt=""
+                    className="block max-w-none size-full"
+                    src={ICON_LINKEDIN_1}
+                  />
                 </div>
               </div>
               <div className="absolute bottom-[45.83%] left-[8.33%] right-[8.33%] top-1/4">
                 <div className="absolute inset-[-11.43%_-4%]">
-                  <img alt="" className="block max-w-none size-full" src={ICON_LINKEDIN_2} />
+                  <Image
+                    alt=""
+                    className="block max-w-none size-full"
+                    src={ICON_LINKEDIN_2}
+                  />
                 </div>
               </div>
             </div>
@@ -99,8 +140,16 @@ export default function ContactSection() {
         >
           <InputField label="Name" placeholder="John" />
           <InputField label="Last name" placeholder="Doe" />
-          <InputField label="Email Address" placeholder="john@gmail.com" type="email" />
-          <InputField label="Phone Number" placeholder="+1 234 567 890" type="tel" />
+          <InputField
+            label="Email Address"
+            placeholder="john@gmail.com"
+            type="email"
+          />
+          <InputField
+            label="Phone Number"
+            placeholder="+1 234 567 890"
+            type="tel"
+          />
 
           {/* Message textarea */}
           <div className="flex flex-col gap-1.5 h-[175px] items-start w-full">

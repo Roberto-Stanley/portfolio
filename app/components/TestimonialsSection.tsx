@@ -1,11 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 // Asset URLs from Figma (expire in 7 days — replace with /public assets for production)
-const TESTIMONIAL_PHOTO = "https://www.figma.com/api/mcp/asset/c4f74ca1-75bd-476c-ae54-c71051615e75";
-const ARROW_LINE = "https://www.figma.com/api/mcp/asset/5ed9ae0f-30b2-4911-842e-df55fc59d295";
-const ARROW_HEAD = "https://www.figma.com/api/mcp/asset/56bb3a17-ecf6-4bab-a982-101f2f4ddee0";
+const TESTIMONIAL_PHOTO =
+  "https://www.figma.com/api/mcp/asset/c4f74ca1-75bd-476c-ae54-c71051615e75";
+const ARROW_LINE =
+  "https://www.figma.com/api/mcp/asset/5ed9ae0f-30b2-4911-842e-df55fc59d295";
+const ARROW_HEAD =
+  "https://www.figma.com/api/mcp/asset/56bb3a17-ecf6-4bab-a982-101f2f4ddee0";
 
 const testimonials = [
   {
@@ -17,7 +21,13 @@ const testimonials = [
   },
 ];
 
-function NavArrow({ direction, onClick }: { direction: "left" | "right"; onClick: () => void }) {
+function NavArrow({
+  direction,
+  onClick,
+}: {
+  direction: "left" | "right";
+  onClick: () => void;
+}) {
   return (
     <button
       onClick={onClick}
@@ -28,12 +38,20 @@ function NavArrow({ direction, onClick }: { direction: "left" | "right"; onClick
       >
         <div className="absolute bottom-[20.83%] left-1/2 right-1/2 top-[20.83%]">
           <div className="absolute inset-[-8.16%_-1px]">
-            <img alt="" className="block max-w-none size-full" src={ARROW_LINE} />
+            <Image
+              alt=""
+              className="block max-w-none size-full"
+              src={ARROW_LINE}
+            />
           </div>
         </div>
         <div className="absolute bottom-[20.83%] left-[20.83%] right-[20.83%] top-1/2">
           <div className="absolute inset-[-16.33%_-8.16%]">
-            <img alt="" className="block max-w-none size-full" src={ARROW_HEAD} />
+            <Image
+              alt=""
+              className="block max-w-none size-full"
+              src={ARROW_HEAD}
+            />
           </div>
         </div>
       </div>
@@ -62,7 +80,7 @@ export default function TestimonialsSection() {
           <div className="flex flex-col gap-[21px] items-center w-full">
             <div className="flex gap-6 items-center">
               <div className="relative shrink-0 size-[75px]">
-                <img
+                <Image
                   alt={t.name}
                   className="absolute block inset-0 max-w-none size-full"
                   height="75"
