@@ -223,7 +223,7 @@ function ProjectsSection() {
           </div>
           {/* Overlapping tablet mockup */}
           <div className="col-start-1 row-start-1 flex items-center justify-center ml-[403px] mt-[163px] h-[547px] w-[773px]">
-            <div className="-scale-y-100 flex-none rotate-180">
+            <div className="flex-none ">
               <div className="relative h-[547px] w-[773px]">
                 <Image
                   width={773}
