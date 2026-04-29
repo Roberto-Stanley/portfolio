@@ -10,6 +10,7 @@
   --foreground: #ffffffb3;
   --background-alt: #21213c;
   --primary: #4b7bff;
+  --primary-alt: #1f3bf1;
   --secondary: #8cb7cb;
   /* Figma design tokens */
   --decorative: #151856;
@@ -23,7 +24,8 @@
   /* Font families */
   --primary-font-family: "Roboto", sans-serif;
   --second-font-family: "Fira Code", monospace;
-  --decoration-font-family: "Rouge Script", cursive; /* Abalone Smile substitute */
+  --decoration-font-family:
+    "Rouge Script", cursive; /* Abalone Smile substitute */
   /* Type scale */
   --xm: 12px;
   --m: 16px;

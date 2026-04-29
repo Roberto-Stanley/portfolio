@@ -13,6 +13,7 @@ export default {
         foreground: "var(--foreground)",
         backgroundAlt: "var(--background-alt)",
         primary: "var(--primary)",
+        "primary-alt": "var(--primary-alt)",
         secondary: "var(--secondary)",
         "magic-mint": "#a3ffdc",
         cards: "#21213c",
