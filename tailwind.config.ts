@@ -25,6 +25,7 @@ export default {
         fireCode: ["Fira Code", "monospace"],
         alternative: ["Rouge Script", "cursive"],
         rougeScript: ["Rouge Script", "cursive"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
       borderWidth: {
         "3": "3px",
