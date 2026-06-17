@@ -53,8 +53,8 @@ function ToolsSection() {
 
 export default function Home() {
   return (
-    <main className="bg-[#070827] text-white overflow-x-hidden">
-      <HeroSection title="Roberto Reyes" />
+    <main className="bg-[#000] text-white overflow-x-hidden">
+      <HeroSection />
 
       <div className="max-w-[1280px] mx-auto px-8">
         <AboutSection />

@@ -1,49 +1,95 @@
 import Image from "next/image";
-import Button from "../../button";
-const HERO_BG = "/img/hero-bg.jpg";
+import Link from "next/link";
+import { Github, Linkedin, ArrowUpRight } from "feather-icons-react";
+import Text from "../../text/Index";
 
-interface Props {
-  title: string;
-}
+const HERO_PORTRAIT = "/img/hero-portrait.jpg";
 
-export default function HeroSection({ title }: Props) {
+export default function HeroSection() {
   return (
-    <section className="relative h-[845px] overflow-hidden w-full">
-      {/* Background image */}
-      <div className="absolute h-[845px] top-0 w-full">
-        <Image
-          width={1920}
-          height={1080}
-          alt=""
-          className="absolute inset-0 max-w-none object-cover pointer-events-none  size-full"
-          src={HERO_BG}
-        />
-      </div>
+    <section
+      className="relative w-full overflow-hidden"
+      style={{ minHeight: 650 }}
+    >
+      {/* Content — 1280px container with 93px left margin matching Figma */}
+      <div
+        className="relative max-w-[1280px] mx-auto px-[93px]"
+        style={{ height: 650 }}
+      >
+        {/* Left column */}
+        <div className="absolute top-0 left-[93px] w-[620px] h-full flex flex-col justify-center ">
+          {/* Role label — y=193 */}
+          <Text type="sub-title" className="mb-6" weight="light">
+            - Full Stack Developer
+          </Text>
+          <Text type="title" tag="h1" className="mb-4" typingAnimation>
+            Roberto Reyes
+          </Text>
+          <Text type="body" weight="light" className=" mb-6">
+            Full-Stack Developer specialising in modern web technologies like
+            React, Next.js &amp; the MERN stack. Focused on building scalable
+            applications and delivering exceptional user experiences through
+            clean architecture and performance-driven development.
+          </Text>
 
-      {/* Dark blur overlay */}
-      <div className="absolute backdrop-blur-[4px] bg-black/50 inset-0" />
+          {/* Description — y=323 */}
+          {/* <p className="font-montserrat font-light text-[#8e8e8e] text-[16px] leading-7 tracking-[0.32px] w-[620px] mb-9">
+            Full-Stack Developer specialising in modern web technologies like
+            React, Next.js &amp; the MERN stack. Focused on building scalable
+            applications and delivering exceptional user experiences through
+            clean architecture and performance-driven development.
+          </p> */}
 
-      {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4">
-        {/* Name */}
-        <h1 className="font-second font-normal text-[40px] leading-10 text-white text-center whitespace-nowrap animate-typing overflow-hidden border-r-4 border-white">
-          {title}
-        </h1>
+          {/* Buttons — y=471 */}
+          <div className="flex items-center gap-3">
+            {/* CTA */}
+            <Link
+              href="#about"
+              className="bg-[rgba(138,56,245,0.5)] hover:bg-[rgba(138,56,245,0.7)] flex gap-2 items-center px-4 py-2 rounded-full transition-colors"
+            >
+              <span className="font-primary font-normal text-white text-base leading-5 whitespace-nowrap">
+                Hire me
+              </span>
+              <ArrowUpRight size={18} className="text-white" />
+            </Link>
 
-        {/* Subtitle */}
-        <p className="font-primary font-normal text-[32px] leading-[var(--2xl,20px)] text-[#b0b0b0] text-center">
-          {`Get ready to turn your `}
-          <span className="bg-clip-text bg-gradient-to-b from-[#a3ffdc] to-[#90b1ff] not-italic font-alternative text-[40px] text-transparent leading-7">
-            ideas
-          </span>
-          {` into `}
-          <span className="bg-clip-text bg-gradient-to-b from-[#a3ffdc] to-[#90b1ff] not-italic font-alternative text-[40px] text-transparent leading-7">
-            reality
-          </span>
-        </p>
+            {/* GitHub icon button */}
+            <a
+              href="https://github.com/robertostanleyreyes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/10 hover:bg-white/20 size-[40px] flex items-center justify-center rounded-full transition-colors"
+            >
+              <Github size={18} className="text-white" />
+            </a>
 
-        {/* CTA button */}
-        <Button label="Continue" href="#about" />
+            {/* LinkedIn icon button */}
+            <a
+              href="https://linkedin.com/in/robertostanleyreyes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/10 hover:bg-white/20 size-[40px] flex items-center justify-center rounded-full transition-colors"
+            >
+              <Linkedin size={18} className="text-white" />
+            </a>
+          </div>
+        </div>
+
+        {/* Right column — profile portrait, y=210 x=760 w=510 h=435 */}
+        <div
+          className="absolute overflow-hidden rounded-2xl"
+          style={{ top: 210, left: 760, width: 510, height: 435 }}
+        >
+          <Image
+            src={HERO_PORTRAIT}
+            alt="Roberto Reyes"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* subtle gradient fade on the left edge to blend into dark bg */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070827]/60 via-transparent to-transparent" />
+        </div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button from "../../button";
 import FakeTooltip from "../../fakeTooltip";
 import Orbital from "../../orbital";
+import Text from "../../text/Index";
 
 const PROFILE_PHOTO = "/img/profile-photo.jpg";
 
@@ -43,25 +44,23 @@ export default function AboutSection() {
       </div>
 
       {/* Bio */}
-      <div className="flex flex-col gap-8 items-start w-[401px]">
+      <div className="">
         <div className="flex flex-col gap-2 items-start">
-          <h2 className="font-second font-normal text-[32px] leading-10 text-white w-full">
-            Roberto Reyes
-          </h2>
-          <p className="font-primary font-normal text-xl leading-6 text-[#b0b0b0] w-full">
-            Full stack developer
-          </p>
+          <Text type="sub-title" weight="light" className="mb-6">
+            Who am I?
+          </Text>
+          <Text type="title" className="mb-4">
+            About me
+          </Text>
         </div>
 
-        <p className="font-primary font-normal text-xl leading-6 text-white w-full">
+        <Text type="body" weight="light" className="mb-6">
           I am passionate about building excellent software that improves the
           lives of those around me. I specialize in creating software for
           clients ranging from individuals and small-businesses all the way to
           large enterprise corporations. What would you do if you had a software
           expert available at your fingertips?
-        </p>
-
-        <Button label="Mis proyectos" href="#projects" />
+        </Text>
       </div>
     </section>
   );
