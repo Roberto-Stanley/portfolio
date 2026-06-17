@@ -1,9 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, ArrowUpRight } from "feather-icons-react";
 import Text from "../../text/Index";
-
-const HERO_PORTRAIT = "/img/hero-portrait.jpg";
+import { CodeWindow } from "../../codeWindown";
 
 export default function HeroSection() {
   return (
@@ -80,15 +78,7 @@ export default function HeroSection() {
           className="absolute overflow-hidden rounded-2xl"
           style={{ top: 210, left: 760, width: 510, height: 435 }}
         >
-          <Image
-            src={HERO_PORTRAIT}
-            alt="Roberto Reyes"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* subtle gradient fade on the left edge to blend into dark bg */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070827]/60 via-transparent to-transparent" />
+          <CodeWindow />
         </div>
       </div>
     </section>
