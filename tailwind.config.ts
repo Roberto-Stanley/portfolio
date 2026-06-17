@@ -9,21 +9,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        backgroundAlt: "var(--background-alt)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        "magic-mint": "#a3ffdc",
-        cards: "#21213c",
-        decorative: "#151856",
+        background: "var(--color-background)",
+        primary: "var(--color-primary)",
+        "primary-hover": "var(--color-primary-hover)",
+        "primary-active": "var(--color-primary-active)",
+        secondary: "var(--color-secondary)",
+        "secondary-hover": "var(--color-secondary-hover)",
+        "secondary-active": "var(--color-secondary-active)",
+        content: {
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+        },
       },
       fontFamily: {
-        primary: ["Roboto", "sans-serif"],
+        primary: ["Montserrat", "sans-serif"],
         second: ["Fira Code", "monospace"],
-        fireCode: ["Fira Code", "monospace"],
-        alternative: ["Rouge Script", "cursive"],
-        rougeScript: ["Rouge Script", "cursive"],
+        alternative: ["Inter", "sans-serif"],
       },
       borderWidth: {
         "3": "3px",
@@ -34,13 +35,13 @@ export default {
           "0%": { width: "0" },
           "100%": { width: "calc(13ch + 4px)" },
         },
-        blink: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0" },
-        },
-        hideCursor: {
-          "0%": { borderRightColor: "white" },
-          "100%": { borderRightColor: "transparent" },
+        "blink-cursor-three": {
+          "0%": { borderRightColor: "#ffffff" },
+          "16.667%": { borderRightColor: "transparent" },
+          "33.333%": { borderRightColor: "#ffffff" },
+          "50%": { borderRightColor: "transparent" },
+          "66.667%": { borderRightColor: "#ffffff" },
+          "83.333%, 100%": { borderRightColor: "transparent" },
         },
         marquee: {
           "0%": { transform: "translateX(0)" },
@@ -56,9 +57,8 @@ export default {
         },
       },
       animation: {
-        typing:
-          "typing 3.5s steps(13, end) forwards, hideCursor 0.4s linear 3.5s forwards",
-        blink: "blink 0.2s step-end infinite",
+        "typing-loop":
+          "typing 3.5s steps(13, end) forwards, blink-cursor-three 1.8s step-end 3.5s 1 forwards",
         marquee: "marquee 30s linear infinite",
         "orbital-spin": "orbital-spin 60s linear infinite",
         "orbital-counter-spin": "orbital-counter-spin 20s linear infinite",
