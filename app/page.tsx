@@ -5,7 +5,6 @@ import Image from "next/image";
 import HeroSection from "./components/sections/heroSection";
 import AboutSection from "./components/sections/aboutSection";
 import ExperienceSection from "./components/sections/experienceSection";
-import StatsBar from "./components/StatsBar";
 
 const CLOUD_BG = "/icons/cloud-bg.svg";
 const TOOLS_FRAME = "/icons/tools-frame.svg";
@@ -61,11 +60,10 @@ export default function Home() {
       <ExperienceSection />
 
       <div className="max-w-[1280px] mx-auto px-8">
-        <StatsBar />
         <TestimonialsSection />
         <ToolsSection />
-        <ContactSection />
       </div>
+      <ContactSection />
     </main>
   );
 }
