@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Github, Linkedin, ArrowUpRight } from "feather-icons-react";
-import Text from "../../text/Index";
+import Text from "../../text";
 import { CodeWindow } from "../../codeWindown";
+import Container from "../../container";
 
 export default function HeroSection() {
   return (
-    <section className="w-full px-4 py-12 xl:px-0 overflow-hidden">
-      {/* Content — 1280px container with 93px left margin matching Figma */}
-      <div className="flex gap-4 lg:gap-0 flex-wrap lg:flex-nowrap md:max-w-[1280px] mx-auto min-h-[650px]">
+    <section className="w-full py-12 overflow-hidden mb-11 md:mb-0">
+      <Container className="flex gap-6 lg:gap-0 flex-wrap lg:flex-nowrap min-h-[650px]">
         {/* Left column */}
         <div className="flex flex-col justify-center flex-1 min-w-0">
           {/* Role label — y=193 */}
@@ -63,7 +63,7 @@ export default function HeroSection() {
         <div className="min-w-full lg:min-w-[510px] flex justify-center items-center">
           <CodeWindow />
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

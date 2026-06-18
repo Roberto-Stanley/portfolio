@@ -1,4 +1,4 @@
-type TextType = "title" | "sub-title" | "body";
+type TextType = "title" | "sub-title" | "body" | "sub-body" | "heading";
 type weight =
   | "light"
   | "normal"

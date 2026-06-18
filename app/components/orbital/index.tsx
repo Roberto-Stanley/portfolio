@@ -59,26 +59,20 @@ interface OrbitalProps {
 }
 
 export default function Orbital({
-  className,
-  displayWidth = 714,
-  displayHeight = 725,
+  className = "",
+  displayWidth = 600,
 }: OrbitalProps) {
   const scale = displayWidth / BASE_W;
 
   return (
-    <div
-      className={`overflow-hidden relative shrink-0 ${className || ""}`}
-      style={{ width: displayWidth, height: displayHeight }}
-    >
+    <div className={`overflow-hidden relative shrink-0 ${className}`}>
       <div
+        className="absolute -left-32 top-12 md:left-12"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "top left",
           width: BASE_W,
           height: BASE_H,
-          position: "absolute",
-          top: 0,
-          left: 0,
         }}
       >
         {/* Background orbital rings */}
@@ -123,11 +117,6 @@ export default function Orbital({
                 </div>
               </div>
             </div>
-          </div>
-          <div className="absolute inset-[41.8%_32.21%_41.83%_32.27%]">
-            <p className="-translate-x-1/2 absolute font-second font-semibold leading-8 left-1/2 text-[12px] text-white text-center top-[calc(50%-16.47px)] whitespace-nowrap">
-              Link here
-            </p>
           </div>
         </div>
 
