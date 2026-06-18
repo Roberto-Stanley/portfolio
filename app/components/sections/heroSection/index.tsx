@@ -5,17 +5,11 @@ import { CodeWindow } from "../../codeWindown";
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative w-full overflow-hidden"
-      style={{ minHeight: 650 }}
-    >
+    <section className="w-full px-4 py-12 xl:px-0 overflow-hidden">
       {/* Content — 1280px container with 93px left margin matching Figma */}
-      <div
-        className="relative max-w-[1280px] mx-auto px-[93px]"
-        style={{ height: 650 }}
-      >
+      <div className="flex gap-4 lg:gap-0 flex-wrap lg:flex-nowrap md:max-w-[1280px] mx-auto min-h-[650px]">
         {/* Left column */}
-        <div className="absolute top-0 left-[93px] w-[620px] h-full flex flex-col justify-center ">
+        <div className="flex flex-col justify-center flex-1 min-w-0">
           {/* Role label — y=193 */}
           <Text type="sub-title" className="mb-6" weight="light">
             - Full Stack Developer
@@ -29,14 +23,6 @@ export default function HeroSection() {
             applications and delivering exceptional user experiences through
             clean architecture and performance-driven development.
           </Text>
-
-          {/* Description — y=323 */}
-          {/* <p className="font-montserrat font-light text-[#8e8e8e] text-[16px] leading-7 tracking-[0.32px] w-[620px] mb-9">
-            Full-Stack Developer specialising in modern web technologies like
-            React, Next.js &amp; the MERN stack. Focused on building scalable
-            applications and delivering exceptional user experiences through
-            clean architecture and performance-driven development.
-          </p> */}
 
           {/* Buttons — y=471 */}
           <div className="flex items-center gap-3">
@@ -73,11 +59,8 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right column — profile portrait, y=210 x=760 w=510 h=435 */}
-        <div
-          className="absolute overflow-hidden rounded-2xl"
-          style={{ top: 210, left: 760, width: 510, height: 435 }}
-        >
+        {/* Right column */}
+        <div className="min-w-full lg:min-w-[510px] flex justify-center items-center">
           <CodeWindow />
         </div>
       </div>

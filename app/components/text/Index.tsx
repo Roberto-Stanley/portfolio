@@ -23,7 +23,7 @@ const Text = ({
 
   if (typingAnimation)
     elementClass +=
-      "inline-block w-0 overflow-hidden whitespace-nowrap animate-typing-loop border-r-3";
+      " inline-block w-0 overflow-hidden whitespace-nowrap animate-typing-loop border-r-3";
 
   elementClass += ` font-${weight}`;
 

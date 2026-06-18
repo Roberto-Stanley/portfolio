@@ -56,13 +56,9 @@ export default function Home() {
     <main className="bg-[#000] text-white overflow-x-hidden">
       <HeroSection />
 
-      <div className="max-w-[1280px] mx-auto px-8">
-        <AboutSection />
-      </div>
+      <AboutSection />
 
-      <div className="max-w-[1280px] mx-auto px-8">
-        <ExperienceSection />
-      </div>
+      <ExperienceSection />
 
       <div className="max-w-[1280px] mx-auto px-8">
         <StatsBar />
