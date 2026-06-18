@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { ArrowUpRight, MapPin } from "feather-icons-react";
+import FloatingTechBadges from "@/app/components/FloatingTechBadges";
+import Container from "@/app/components/container";
+import Text from "@/app/components/text";
+import StatsBar from "@/app/components/statsBar";
 
 interface ExperienceCardProps {
   years: string;
@@ -28,12 +32,7 @@ function ExperienceCard({
           </span>
         </div>
         <div className="relative h-[111px] w-[148px] rounded-lg overflow-hidden shrink-0">
-          <Image
-            src={imageSrc}
-            alt={title}
-            fill
-            className="object-cover"
-          />
+          <Image src={imageSrc} alt={title} fill className="object-cover" />
         </div>
         <a
           href="#"
@@ -111,26 +110,41 @@ const EXPERIENCES: ExperienceCardProps[] = [
 
 export default function ExperienceSection() {
   return (
-    <section className="py-16 flex flex-col gap-12">
-      {/* Heading */}
-      <div className="flex flex-col gap-2 items-center text-center">
-        <p className="font-second font-normal text-[#b0b0b0] text-base leading-5 tracking-wide">
-          Mi Viaje Profesional
-        </p>
-        <h2 className="font-second font-normal text-white text-[40px] leading-[48px]">
-          8 años construyendo
-        </h2>
-        <h2 className="font-second font-normal text-white text-[40px] leading-[48px]">
-          Soluciones impactantes
-        </h2>
+    <section className="w-full relative">
+      <div className="flex flex-row justify-between items-center gap-12 mb-24">
+        <FloatingTechBadges className="hidden xl:block shrink-0" />
+        {/* Heading + Floating Badges */}
+        <Container className="grow">
+          <div className="flex flex-col gap-2">
+            <Text type="sub-title" weight="light" className="mb-6 text-center">
+              Mi Viaje Profesional
+            </Text>
+            <Text tag="h2" type="title" className="mb-2 text-center">
+              8 años construyendo
+            </Text>
+            <Text
+              tag="h2"
+              type="title"
+              weight="extrabold"
+              className="text-center"
+            >
+              Soluciones impactantes
+            </Text>
+          </div>
+        </Container>
+        <FloatingTechBadges className="hidden xl:block shrink-0" />
       </div>
 
       {/* Experience cards 2×2 grid */}
-      <div className="grid grid-cols-2 gap-6">
-        {EXPERIENCES.map((exp, i) => (
-          <ExperienceCard key={i} {...exp} />
-        ))}
-      </div>
+      <Container>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+          {EXPERIENCES.map((exp, i) => (
+            <ExperienceCard key={i} {...exp} />
+          ))}
+        </div>
+
+        <StatsBar />
+      </Container>
     </section>
   );
 }

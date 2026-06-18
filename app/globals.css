@@ -48,5 +48,141 @@
 body {
   color: var(--color-text);
   background: var(--color-background);
-  font-family:  var(--primary-font-family), sans-serif;
+  font-family: var(--primary-font-family), sans-serif;
+}
+
+/* TODO: crete the correct animation
+/* FloatingTechBadges keyframes */
+@keyframes float-mysql {
+  0%,
+  100% {
+    left: 69px;
+    top: 166px;
+  }
+  25% {
+    left: 65px;
+    top: 146px;
+  }
+  50% {
+    left: 109px;
+    top: 128px;
+  }
+  75% {
+    left: 48px;
+    top: 123px;
+  }
+}
+@keyframes float-react-native {
+  0%,
+  100% {
+    left: 279px;
+    top: 180px;
+  }
+  25% {
+    left: 292px;
+    top: 216px;
+  }
+  50% {
+    left: 315px;
+    top: 163px;
+  }
+  75% {
+    left: 361px;
+    top: 143px;
+  }
+}
+@keyframes float-mongodb {
+  0%,
+  100% {
+    left: 189px;
+    top: 65px;
+  }
+  25% {
+    left: 210px;
+    top: 46px;
+  }
+  50% {
+    left: 210px;
+    top: 76px;
+  }
+  75% {
+    left: 210px;
+    top: 33px;
+  }
+}
+@keyframes float-devops {
+  0%,
+  100% {
+    left: 180px;
+    top: 153px;
+  }
+  25% {
+    left: 210px;
+    top: 150px;
+  }
+  50% {
+    left: 210px;
+    top: 150px;
+  }
+  75% {
+    left: 182px;
+    top: 155px;
+  }
+}
+@keyframes float-vuejs {
+  0%,
+  100% {
+    left: 89px;
+    top: 89px;
+  }
+  25% {
+    left: 105px;
+    top: 70px;
+  }
+  50% {
+    left: 93px;
+    top: 49px;
+  }
+  75% {
+    left: 39px;
+    top: 33px;
+  }
+}
+@keyframes float-nextjs {
+  0%,
+  100% {
+    left: 319px;
+    top: 74px;
+  }
+  25% {
+    left: 304px;
+    top: 111px;
+  }
+  50% {
+    left: 292px;
+    top: 72px;
+  }
+  75% {
+    left: 319px;
+    top: 47px;
+  }
+}
+@keyframes float-expressjs {
+  0%,
+  100% {
+    left: 161px;
+    top: 253px;
+  }
+  25% {
+    left: 154px;
+    top: 206px;
+  }
+  50% {
+    left: 210px;
+    top: 228px;
+  }
+  75% {
+    left: 210px;
+    top: 257px;
+  }
 }
