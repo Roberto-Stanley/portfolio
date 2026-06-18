@@ -53,27 +53,18 @@ function ToolsSection() {
 
 export default function Home() {
   return (
-    <main className="bg-[#000] text-white overflow-x-hidden">
+    <main className=" overflow-x-hidden">
       <HeroSection />
 
-      <div className="max-w-[1280px] mx-auto px-8">
-        <AboutSection />
-      </div>
+      <AboutSection />
 
-      <div className="max-w-[1280px] mx-auto px-8">
-        <ExperienceSection />
-      </div>
+      <ExperienceSection />
 
       <div className="max-w-[1280px] mx-auto px-8">
         <StatsBar />
         <TestimonialsSection />
         <ToolsSection />
         <ContactSection />
-      </div>
-
-      {/* Footer tech strip */}
-      <div className="flex justify-center py-6 border-t border-white/10">
-        <TechBadgesStrip />
       </div>
     </main>
   );

@@ -1,13 +1,13 @@
 import { TextProps } from "./types";
 
-const Text = ({
+export default function Text({
   type = "body",
   tag: Tag = "p",
   typingAnimation = false,
   weight = "normal",
   children,
   className,
-}: TextProps) => {
+}: TextProps) {
   let elementClass = "";
   switch (type) {
     case "title":
@@ -19,15 +19,19 @@ const Text = ({
       break;
     case "body":
       elementClass = "font-primary text-base text-content-secondary";
+      break;
+    case "sub-body":
+      elementClass = "font-primary text-xs text-content-secondary";
+      break;
+    case "heading":
+      elementClass = "font-primary text-3xl text-secondary";
   }
 
   if (typingAnimation)
     elementClass +=
-      "inline-block w-0 overflow-hidden whitespace-nowrap animate-typing-loop border-r-3";
+      " inline-block w-0 overflow-hidden whitespace-nowrap animate-typing-loop border-r-3";
 
   elementClass += ` font-${weight}`;
 
   return <Tag className={`${elementClass} ${className}`}>{children}</Tag>;
-};
-
-export default Text;
+}
