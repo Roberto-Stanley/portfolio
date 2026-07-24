@@ -8,15 +8,18 @@
 
 :root {
   --color-primary: #4b7bff;
-  --color-secondary-alt: #8a38f580;
-  --color-text-primary: #f1f1f1;
-  --color-text-secondary: #999999;
-  --color-secondary: #a663fe;
-  --color-secondary-hover: #5f1aba80;
-  --color-secondary-active: #3e008e80;
   --color-primary-hover: #1e55df33;
   --color-primary-active: #00298e33;
+  --color-secondary: #a663fe;
+  --color-secondary-alt: #8a38f580;
+  --color-secondary-hover: #5f1aba80;
+  --color-secondary-active: #3e008e80;
+  --color-secondary-light: #a663fe90;
+  --color-text-primary: #f1f1f1;
+  --color-text-secondary: #999999;
   --color-background: #020317;
+  --color-background-decorative: #ffffff90;
+  --color-decorative: #3d3d3d;
   /* Font families */
   --primary-font-family: "Montserrat", sans-serif;
   --second-font-family: "Fira Code", monospace;

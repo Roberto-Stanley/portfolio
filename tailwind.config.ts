@@ -14,8 +14,12 @@ export default {
         "primary-hover": "var(--color-primary-hover)",
         "primary-active": "var(--color-primary-active)",
         secondary: "var(--color-secondary)",
+        "secondary-alt": "var(--color-secondary-alt)",
         "secondary-hover": "var(--color-secondary-hover)",
         "secondary-active": "var(--color-secondary-active)",
+        "secondary-light": "var(--color-secondary-light)",
+        decorative: "var(--color-decorative)",
+        "background-decorative": "var(--color-background-decorative)",
         content: {
           primary: "var(--color-text-primary)",
           secondary: "var(--color-text-secondary)",
