@@ -7,10 +7,10 @@ const PROFILE_PHOTO = "/img/profile-photo.jpg";
 
 export default function AboutSection() {
   return (
-    <section>
+    <section id="about">
       {/* Orbital decoration with profile photo + cloud label overlays */}
-      <Container className="flex flex-col-reverse md:flex-row">
-        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+      <Container className="flex flex-col-reverse md:flex-row overflow-hidden">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-w-full overflow-hidden">
           <Orbital className="col-start-1 row-start-1 w-[700px] h-[700px]" />
 
           {/* Main profile photo overlaid on orbital center */}
@@ -37,7 +37,7 @@ export default function AboutSection() {
         </div>
 
         {/* Bio */}
-        <div className="flex flex-col justify-center flex-1 min-w-0 ml-0 md:ml-8">
+        <div className="flex flex-col justify-center flex-1 min-w-0 w-full overflow-hidden ml-0 md:ml-8">
           <div className="flex flex-col gap-2 items-start">
             <Text type="sub-title" weight="light" className="mb-6">
               Who am I?

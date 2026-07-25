@@ -50,7 +50,7 @@ function ExperienceCard({
         <p className="font-montserrat font-medium text-[#dedede] text-[16px] leading-6 tracking-[0.32px]">
           {title}
         </p>
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-3 items-center flex-wrap sm:flex-nowrap">
           <span className="font-montserrat font-medium text-[#a663fe] text-[12px] leading-[14px] tracking-[0.24px] whitespace-nowrap">
             {company}
           </span>

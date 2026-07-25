@@ -1,26 +1,56 @@
-import { ArrowDown } from "feather-icons-react";
 import Link from "next/link";
-interface Props {
-  label: string;
-  className?: string;
-  href?: string;
-}
+import type { Props, WithHref } from "./type";
 
-export default function Button({ label, className, href }: Props) {
+export default function Button({
+  children,
+  className,
+  size = "m",
+  variant = "default",
+  shape = "square",
+  icon,
+  iconPosition = "right",
+  ...rest
+}: Props) {
+  const isIconOnly = shape === "rounded";
+  const isGhost = variant === "ghost";
+
+  const shapeClasses = isIconOnly ? "rounded-full p-2" : "rounded-5xl";
+  const sizeClasses = isIconOnly
+    ? ""
+    : size === "s" ? "gap-2 px-2 py-1" : "gap-2 px-4 py-2";
+
+  const variantClasses = isGhost
+    ? "bg-white/10 hover:bg-primary-hover active:bg-primary-active"
+    : "bg-secondary-alt hover:bg-secondary-hover active:bg-secondary-active";
+
+  const textSpan = (
+    <span className="font-primary font-medium leading-6 text-content-primary text-base text-center tracking-[0.32px] whitespace-nowrap">
+      {children}
+    </span>
+  );
+
   const inner = (
-    <div className="bg-primary hover:bg-primary-alt border-3 border-magic-mint flex gap-2 items-center justify-center px-4 py-2 rounded-[40px]">
-      <span className="font-primary font-normal leading-5 text-white text-base text-center whitespace-nowrap">
-        {label}
-      </span>
-      <ArrowDown />
+    <div
+      className={`flex items-center justify-center backdrop-blur-sm transition-colors ${shapeClasses} ${sizeClasses} ${variantClasses}`}
+    >
+      {isIconOnly ? (
+        icon
+      ) : iconPosition === "left" ? (
+        <>{icon}{textSpan}</>
+      ) : (
+        <>{textSpan}{icon}</>
+      )}
     </div>
   );
+
+  const { href, ...linkRest } = rest as WithHref;
 
   if (href) {
     return (
       <Link
         href={href}
         className={`inline-flex items-start ${className || ""}`}
+        {...linkRest}
       >
         {inner}
       </Link>

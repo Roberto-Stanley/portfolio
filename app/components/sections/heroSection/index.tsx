@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { Github, Linkedin, ArrowUpRight } from "feather-icons-react";
-import Text from "../../text";
-import { CodeWindow } from "../../codeWindown";
-import Container from "../../container";
+import Text from "@/app/components/text";
+import { CodeWindow } from "@/app/components/codeWindown";
+import Container from "@/app/components/container";
+import Button from "@/app/components/button";
 
 export default function HeroSection() {
   return (
@@ -27,7 +27,7 @@ export default function HeroSection() {
           {/* Buttons — y=471 */}
           <div className="flex items-center gap-3">
             {/* CTA */}
-            <Link
+            {/* <Link
               href="#about"
               className="bg-[rgba(138,56,245,0.5)] hover:bg-[rgba(138,56,245,0.7)] flex gap-2 items-center px-4 py-2 rounded-full transition-colors"
             >
@@ -35,27 +35,39 @@ export default function HeroSection() {
                 Hire me
               </span>
               <ArrowUpRight size={18} className="text-white" />
-            </Link>
+            </Link> */}
+            <Button icon={<ArrowUpRight size={18} className="text-white" />}>
+              Hire me
+            </Button>
 
             {/* GitHub icon button */}
-            <a
+            {/* <a
               href="https://github.com/robertostanleyreyes"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 hover:bg-white/20 size-[40px] flex items-center justify-center rounded-full transition-colors"
             >
               <Github size={18} className="text-white" />
-            </a>
+            </a> */}
 
-            {/* LinkedIn icon button */}
-            <a
-              href="https://linkedin.com/in/robertostanleyreyes"
+            <Button
+              shape="rounded"
+              variant="ghost"
+              href="https://github.com/Roberto-Stanley"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white/10 hover:bg-white/20 size-[40px] flex items-center justify-center rounded-full transition-colors"
-            >
-              <Linkedin size={18} className="text-white" />
-            </a>
+              icon={<Github size={18} className="text-white" />}
+            />
+
+            {/* LinkedIn icon button */}
+            <Button
+              shape="rounded"
+              variant="ghost"
+              href="https://www.linkedin.com/in/roberto-reyes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={<Linkedin size={18} className="text-white" />}
+            />
           </div>
         </div>
 
