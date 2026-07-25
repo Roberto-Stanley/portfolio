@@ -5,6 +5,7 @@ import Image from "next/image";
 import HeroSection from "./components/sections/heroSection";
 import AboutSection from "./components/sections/aboutSection";
 import ExperienceSection from "./components/sections/experienceSection";
+import Menu from "./components/menu";
 
 const CLOUD_BG = "/icons/cloud-bg.svg";
 const TOOLS_FRAME = "/icons/tools-frame.svg";
@@ -53,6 +54,9 @@ function ToolsSection() {
 export default function Home() {
   return (
     <main className=" overflow-x-hidden">
+      <div className="flex justify-center mt-12">
+        <Menu />
+      </div>
       <HeroSection />
 
       <AboutSection />
