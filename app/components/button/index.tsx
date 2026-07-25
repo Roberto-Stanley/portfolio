@@ -1,55 +1,26 @@
-import { ArrowUpRight } from "feather-icons-react";
-import Link, { type LinkProps } from "next/link";
-
-type ButtonSize = "s" | "m";
-type ButtonVariant = "default" | "ghost";
-type ButtonType = "text-icon" | "icon";
-type ButtonIconPosition = "left" | "right";
-
-type BaseProps = {
-  children?: React.ReactNode;
-  className?: string;
-  size?: ButtonSize;
-  variant?: ButtonVariant;
-  type?: ButtonType;
-  icon?: React.ReactNode;
-  iconPosition?: ButtonIconPosition;
-};
-
-type WithHref = BaseProps &
-  Omit<LinkProps, keyof BaseProps> &
-  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps | "href"> & {
-    href: string;
-  };
-
-type WithoutHref = BaseProps & { href?: never };
-
-type Props = WithHref | WithoutHref;
+import Link from "next/link";
+import type { Props, WithHref } from "./type";
 
 export default function Button({
   children,
   className,
   size = "m",
   variant = "default",
-  type = "text-icon",
+  shape = "square",
   icon,
   iconPosition = "right",
   ...rest
 }: Props) {
-  const isIconOnly = type === "icon";
+  const isIconOnly = shape === "rounded";
   const isGhost = variant === "ghost";
-  const resolvedIcon = icon ?? <ArrowUpRight className="shrink-0 size-6" />;
 
+  const shapeClasses = isIconOnly ? "rounded-full p-2" : "rounded-5xl";
   const sizeClasses = isIconOnly
-    ? "p-2 w-10 h-10"
-    : size === "s"
-      ? "gap-2 px-2 py-1"
-      : "gap-2 px-4 py-2";
+    ? ""
+    : size === "s" ? "gap-2 px-2 py-1" : "gap-2 px-4 py-2";
 
   const variantClasses = isGhost
-    ? isIconOnly
-      ? "bg-white/10 hover:bg-primary-hover active:bg-primary-active"
-      : "bg-transparent"
+    ? "bg-white/10 hover:bg-primary-hover active:bg-primary-active"
     : "bg-secondary-alt hover:bg-secondary-hover active:bg-secondary-active";
 
   const textSpan = (
@@ -60,14 +31,14 @@ export default function Button({
 
   const inner = (
     <div
-      className={`flex items-center justify-center rounded-[40px] backdrop-blur-sm transition-colors ${sizeClasses} ${variantClasses}`}
+      className={`flex items-center justify-center backdrop-blur-sm transition-colors ${shapeClasses} ${sizeClasses} ${variantClasses}`}
     >
       {isIconOnly ? (
-        resolvedIcon
+        icon
       ) : iconPosition === "left" ? (
-        <>{resolvedIcon}{textSpan}</>
+        <>{icon}{textSpan}</>
       ) : (
-        <>{textSpan}{resolvedIcon}</>
+        <>{textSpan}{icon}</>
       )}
     </div>
   );
