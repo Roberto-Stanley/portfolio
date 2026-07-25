@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ProjectButton from "./ProjectButton";
+import Button from "./button";
 import Image from "next/image";
 import Container from "./container";
 
@@ -171,7 +171,7 @@ export default function ContactSection() {
               />
             </div>
 
-            <ProjectButton label="Submit" />
+            <Button>Submit</Button>
           </form>
         </div>
       </Container>
