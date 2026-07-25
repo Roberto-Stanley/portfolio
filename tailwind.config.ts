@@ -33,6 +33,10 @@ export default {
       borderWidth: {
         "3": "3px",
       },
+      borderRadius: {
+        "4xl": "2rem",
+        "5xl": "2.5rem",
+      },
 
       keyframes: {
         typing: {
