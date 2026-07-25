@@ -45,7 +45,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="mb-40">
+    <section id="contact" className="mb-40">
       <Container>
         <div
           className="flex gap-10 items-center justify-center
