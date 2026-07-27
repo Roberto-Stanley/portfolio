@@ -14,7 +14,7 @@ type Props = {
 
 export default function Menu({ activeSection = "hero" }: Props) {
   return (
-    <nav className="inline-flex items-center gap-2 px-2 py-2 sm:px-4 sm:py-4 rounded-full bg-background shadow-[0_0_8px_var(--color-secondary-alt)] backdrop-blur-sm">
+    <nav className="inline-flex items-center gap-2 px-2 py-2 sm:px-4 sm:py-4 rounded-full bg-background/80 shadow-[0_0_8px_var(--color-secondary-alt)] backdrop-blur-md">
       {NAV_ITEMS.map((item) => (
         <MenuItem
           key={item.href}
