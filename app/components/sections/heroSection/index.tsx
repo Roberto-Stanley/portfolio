@@ -6,7 +6,7 @@ import Button from "@/app/components/button";
 
 export default function HeroSection() {
   return (
-    <section className="w-full py-12 overflow-hidden mb-11 md:mb-0">
+    <section className="w-full pt-36 pb-12 overflow-hidden mb-11 md:mb-0">
       <Container className="flex gap-6 lg:gap-0 flex-wrap lg:flex-nowrap min-h-[650px]">
         {/* Left column */}
         <div className="flex flex-col justify-center flex-1 min-w-0">

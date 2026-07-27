@@ -54,7 +54,7 @@ function ToolsSection() {
 export default function Home() {
   return (
     <main className=" overflow-x-hidden">
-      <div className="flex justify-center mt-12">
+      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-16">
         <Menu />
       </div>
       <HeroSection />
