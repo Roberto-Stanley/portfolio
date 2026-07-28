@@ -4,6 +4,7 @@ import FloatingTechBadges from "@/app/components/FloatingTechBadges";
 import Container from "@/app/components/container";
 import Text from "@/app/components/text";
 import StatsBar from "@/app/components/statsBar";
+import TimeLine from "@/app/components/timeLine";
 
 interface ExperienceCardProps {
   years: string;
@@ -138,9 +139,6 @@ export default function ExperienceSection() {
       {/* Experience cards 2×2 grid */}
       <Container>
         <div className="relative mb-24">
-          {/* Center vertical line — desktop only */}
-          <div className="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-1.5 bg-primary-hover" />
-
           {/* Mobile: stacked cards */}
           <div className="flex flex-col gap-6 md:hidden">
             {EXPERIENCES.map((exp, i) => (
@@ -148,44 +146,13 @@ export default function ExperienceSection() {
             ))}
           </div>
 
-          {/* Desktop: paired rows */}
-          <div className="hidden md:flex flex-col">
-            {Array.from({ length: Math.ceil(EXPERIENCES.length / 2) }, (_, pi) => {
-              const leftExp = EXPERIENCES[pi * 2];
-              const rightExp = EXPERIENCES[pi * 2 + 1];
-              return (
-                <div key={pi} className="flex items-start">
-                  {/* Left card + connector */}
-                  <div className="w-[calc(50%-24px)] relative">
-                    {leftExp && (
-                      <>
-                        <ExperienceCard {...leftExp} />
-                        <div className="absolute top-[30px] left-full w-6 flex items-center">
-                          <div className="w-full h-1.5 bg-primary-hover" />
-                          <div className="absolute right-0 translate-x-1/2 size-3 rounded-full bg-secondary" />
-                        </div>
-                      </>
-                    )}
-                  </div>
-
-                  {/* Center spacer */}
-                  <div className="w-12 shrink-0" />
-
-                  {/* Right card + connector (offset 100px from pair top) */}
-                  <div className="w-[calc(50%-24px)] pt-[100px]">
-                    {rightExp && (
-                      <div className="relative">
-                        <ExperienceCard {...rightExp} />
-                        <div className="absolute top-[30px] right-full w-6 flex items-center">
-                          <div className="w-full h-1.5 bg-primary-hover" />
-                          <div className="absolute left-0 -translate-x-1/2 size-3 rounded-full bg-secondary" />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+          {/* Desktop: timeline */}
+          <div className="hidden md:block">
+            <TimeLine>
+              {EXPERIENCES.map((exp, i) => (
+                <ExperienceCard key={i} {...exp} />
+              ))}
+            </TimeLine>
           </div>
         </div>
 
