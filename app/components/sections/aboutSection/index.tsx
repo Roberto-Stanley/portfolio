@@ -7,7 +7,7 @@ const PROFILE_PHOTO = "/img/profile-photo.jpg";
 
 export default function AboutSection() {
   return (
-    <section id="about">
+    <section id="about" className="mb-52">
       {/* Orbital decoration with profile photo + cloud label overlays */}
       <Container className="flex flex-col-reverse md:flex-row overflow-hidden">
         <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-w-full overflow-hidden">

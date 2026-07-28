@@ -1,5 +1,5 @@
 import { Home, UserCheck, Folder, ArrowUpRight } from "feather-icons-react";
-import MenuItem from "@/app/components/menuItem";
+import MenuItem from "@/app/components/navigation/menuItem";
 import Button from "@/app/components/button";
 
 const NAV_ITEMS = [
@@ -14,7 +14,7 @@ type Props = {
 
 export default function Menu({ activeSection = "hero" }: Props) {
   return (
-    <nav className="inline-flex items-center gap-2 px-2 py-2 sm:px-4 sm:py-4 rounded-full bg-background/80 shadow-[0_0_8px_var(--color-secondary-alt)] backdrop-blur-md">
+    <nav className="inline-flex items-center gap-2 px-2 py-2 sm:px-4 sm:py-4 rounded-full bg-background/60 border border-secondary-active backdrop-blur-[4px] shadow-[0_0_8px_var(--color-secondary-alt)]">
       {NAV_ITEMS.map((item) => (
         <MenuItem
           key={item.href}
