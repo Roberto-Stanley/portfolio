@@ -5,7 +5,7 @@ import Image from "next/image";
 import HeroSection from "./components/sections/heroSection";
 import AboutSection from "./components/sections/aboutSection";
 import ExperienceSection from "./components/sections/experienceSection";
-import Menu from "./components/menu";
+import NavTracker from "./components/navTracker";
 
 const CLOUD_BG = "/icons/cloud-bg.svg";
 const TOOLS_FRAME = "/icons/tools-frame.svg";
@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <main className=" overflow-x-hidden">
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-16">
-        <Menu />
+        <NavTracker />
       </div>
       <HeroSection />
 
