@@ -63,10 +63,10 @@ export default function Home() {
 
       <ExperienceSection />
 
-      <div className="max-w-[1280px] mx-auto px-8">
-        <TestimonialsSection />
-        <ToolsSection />
-      </div>
+      <FeedbackSection />
+
+      <ToolsSection />
+
       <ContactSection />
     </main>
   );
