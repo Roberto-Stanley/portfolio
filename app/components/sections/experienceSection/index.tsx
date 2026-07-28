@@ -110,7 +110,7 @@ const EXPERIENCES: ExperienceCardProps[] = [
 
 export default function ExperienceSection() {
   return (
-    <section id="projects" className="w-full relative">
+    <section id="projects" className="w-full relative mb-52">
       <div className="flex flex-row justify-between items-center gap-12 mb-24">
         <FloatingTechBadges className="hidden xl:block shrink-0" />
         {/* Heading + Floating Badges */}

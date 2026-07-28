@@ -1,5 +1,5 @@
 import TechBadgesStrip from "./components/TechBadgesStrip";
-import TestimonialsSection from "./components/TestimonialsSection";
+import FeedbackSection from "./components/sections/feedbackSection";
 import ContactSection from "./components/sections/contactSection";
 import Image from "next/image";
 import HeroSection from "./components/sections/heroSection";
@@ -16,9 +16,23 @@ function ToolsSection() {
   return (
     <section className="py-12 flex flex-col items-center gap-8">
       {/* Decorative cloud + frame */}
-      <div className="relative flex items-center justify-center">
+      <div className="flex justify-center">
+        <div className="relative w-24 h-full">
+          <div className="absolute right-0 -top-8 h-[49px] w-[108px]">
+            <Image
+              fill
+              alt=""
+              className="absolute block inset-0 max-w-none size-full"
+              src={CLOUD_BG}
+            />
+            <p className="absolute font-alternative not-italic text-[12px] text-white text-center leading-4 inset-[30.61%_18.89%_36.21%_19.44%]">
+              Tools
+            </p>
+          </div>
+        </div>
+
         <div className="relative flex items-center justify-center size-[136px]">
-          <div className="-rotate-[87.36deg] flex-none">
+          <div className=" flex-none">
             <div className="relative size-[130px]">
               <Image
                 fill
@@ -28,18 +42,6 @@ function ToolsSection() {
               />
             </div>
           </div>
-        </div>
-        {/* Tools cloud label */}
-        <div className="absolute h-[49px] w-[108px]">
-          <Image
-            fill
-            alt=""
-            className="absolute block inset-0 max-w-none size-full"
-            src={CLOUD_BG}
-          />
-          <p className="absolute font-alternative not-italic text-[12px] text-white text-center leading-4 inset-[30.61%_18.89%_36.21%_19.44%]">
-            Tools
-          </p>
         </div>
       </div>
 
