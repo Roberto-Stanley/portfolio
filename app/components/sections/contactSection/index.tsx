@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Button from "./button";
+import Button from "../../button";
 import Image from "next/image";
-import Container from "./container";
+import Container from "../../container";
 
 const ICON_PHONE_1 = "/icons/icon-phone-1.svg";
 const ICON_PHONE_2 = "/icons/icon-phone-2.svg";

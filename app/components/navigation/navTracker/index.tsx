@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Menu from "@/app/components/menu";
+import Menu from "@/app/components/navigation/menu";
 
 const SECTIONS = ["hero", "about", "projects"];
 

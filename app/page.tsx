@@ -1,11 +1,11 @@
 import TechBadgesStrip from "./components/TechBadgesStrip";
 import TestimonialsSection from "./components/TestimonialsSection";
-import ContactSection from "./components/ContactSection";
+import ContactSection from "./components/sections/contactSection";
 import Image from "next/image";
 import HeroSection from "./components/sections/heroSection";
 import AboutSection from "./components/sections/aboutSection";
 import ExperienceSection from "./components/sections/experienceSection";
-import NavTracker from "./components/navTracker";
+import NavTracker from "./components/navigation/navTracker";
 
 const CLOUD_BG = "/icons/cloud-bg.svg";
 const TOOLS_FRAME = "/icons/tools-frame.svg";

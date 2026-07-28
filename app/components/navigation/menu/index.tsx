@@ -1,5 +1,5 @@
 import { Home, UserCheck, Folder, ArrowUpRight } from "feather-icons-react";
-import MenuItem from "@/app/components/menuItem";
+import MenuItem from "@/app/components/navigation/menuItem";
 import Button from "@/app/components/button";
 
 const NAV_ITEMS = [
