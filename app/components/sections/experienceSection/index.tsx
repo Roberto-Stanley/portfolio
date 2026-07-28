@@ -137,10 +137,56 @@ export default function ExperienceSection() {
 
       {/* Experience cards 2×2 grid */}
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
-          {EXPERIENCES.map((exp, i) => (
-            <ExperienceCard key={i} {...exp} />
-          ))}
+        <div className="relative mb-24">
+          {/* Center vertical line — desktop only */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-1.5 bg-primary-hover" />
+
+          {/* Mobile: stacked cards */}
+          <div className="flex flex-col gap-6 md:hidden">
+            {EXPERIENCES.map((exp, i) => (
+              <ExperienceCard key={i} {...exp} />
+            ))}
+          </div>
+
+          {/* Desktop: paired rows */}
+          <div className="hidden md:flex flex-col">
+            {Array.from({ length: Math.ceil(EXPERIENCES.length / 2) }, (_, pi) => {
+              const leftExp = EXPERIENCES[pi * 2];
+              const rightExp = EXPERIENCES[pi * 2 + 1];
+              return (
+                <div key={pi} className="flex items-start">
+                  {/* Left card + connector */}
+                  <div className="w-[calc(50%-24px)] relative">
+                    {leftExp && (
+                      <>
+                        <ExperienceCard {...leftExp} />
+                        <div className="absolute top-[30px] left-full w-6 flex items-center">
+                          <div className="w-full h-1.5 bg-primary-hover" />
+                          <div className="absolute right-0 translate-x-1/2 size-3 rounded-full bg-secondary" />
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Center spacer */}
+                  <div className="w-12 shrink-0" />
+
+                  {/* Right card + connector (offset 100px from pair top) */}
+                  <div className="w-[calc(50%-24px)] pt-[100px]">
+                    {rightExp && (
+                      <div className="relative">
+                        <ExperienceCard {...rightExp} />
+                        <div className="absolute top-[30px] right-full w-6 flex items-center">
+                          <div className="w-full h-1.5 bg-primary-hover" />
+                          <div className="absolute left-0 -translate-x-1/2 size-3 rounded-full bg-secondary" />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <StatsBar />
