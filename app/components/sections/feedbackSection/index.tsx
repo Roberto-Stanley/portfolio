@@ -4,7 +4,7 @@ import Carousel from "@/app/components/carousel";
 import Text from "@/app/components/text";
 import Container from "@/app/components/container";
 import FeedbackCard from "./feedbackCard";
-import { FeedbackCardProps } from "./types";
+import { FeedbackCardProps } from "./feedbackCard/types";
 
 const TESTIMONIAL_PHOTO = "/img/testimonial-photo.jpg";
 const PROFILE_PHOTO = "/img/profile-photo.jpg";

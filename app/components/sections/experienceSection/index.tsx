@@ -1,74 +1,10 @@
-import Image from "next/image";
-import { ArrowUpRight, MapPin } from "feather-icons-react";
 import FloatingTechBadges from "@/app/components/FloatingTechBadges";
 import Container from "@/app/components/container";
 import Text from "@/app/components/text";
 import StatsBar from "@/app/components/statsBar";
 import TimeLine from "@/app/components/timeLine";
-
-interface ExperienceCardProps {
-  years: string;
-  imageSrc: string;
-  title: string;
-  company: string;
-  location: string;
-  description: string;
-}
-
-function ExperienceCard({
-  years,
-  imageSrc,
-  title,
-  company,
-  location,
-  description,
-}: ExperienceCardProps) {
-  return (
-    <div className="bg-white/10 flex gap-3 items-start p-4 rounded-2xl w-full">
-      {/* Left column: year badge + mockup + ver button */}
-      <div className="flex flex-col gap-3 items-center shrink-0">
-        <div className="bg-primary/20 flex items-center justify-center px-2 py-1 rounded-full">
-          <span className="font-montserrat font-medium text-[#dedede] text-[12px] leading-[14px] tracking-[0.24px] whitespace-nowrap">
-            {years}
-          </span>
-        </div>
-        <div className="relative h-[111px] w-[148px] rounded-lg overflow-hidden shrink-0">
-          <Image src={imageSrc} alt={title} fill className="object-cover" />
-        </div>
-        <a
-          href="#"
-          className="bg-[rgba(138,56,245,0.5)] flex gap-2 items-center justify-center px-4 py-2 rounded-full"
-        >
-          <span className="font-primary font-normal text-white text-base leading-5 whitespace-nowrap">
-            Ver
-          </span>
-          <ArrowUpRight size={24} className="text-white shrink-0" />
-        </a>
-      </div>
-
-      {/* Right column: title, company, location, description */}
-      <div className="flex flex-col gap-2 flex-1 min-w-0 self-stretch">
-        <p className="font-montserrat font-medium text-[#dedede] text-[16px] leading-6 tracking-[0.32px]">
-          {title}
-        </p>
-        <div className="flex gap-3 items-center flex-wrap sm:flex-nowrap">
-          <span className="font-montserrat font-medium text-[#a663fe] text-[12px] leading-[14px] tracking-[0.24px] whitespace-nowrap">
-            {company}
-          </span>
-          <div className="flex gap-0.5 items-center">
-            <MapPin size={14} className="text-[#dedede] shrink-0" />
-            <span className="font-montserrat font-medium text-[#dedede] text-[12px] leading-[14px] tracking-[0.24px] whitespace-nowrap">
-              {location}
-            </span>
-          </div>
-        </div>
-        <p className="font-montserrat font-light text-[#adadad] text-[16px] leading-6 tracking-[0.32px]">
-          {description}
-        </p>
-      </div>
-    </div>
-  );
-}
+import ExperienceCard from "./experienceCard";
+import { ExperienceCardProps } from "./experienceCard/types";
 
 const EXPERIENCES: ExperienceCardProps[] = [
   {

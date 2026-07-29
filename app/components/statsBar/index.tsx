@@ -5,6 +5,8 @@ import {
   Terminal,
   Users,
 } from "feather-icons-react";
+import Card from "@/app/components/card";
+import StatsItem from "./statsItem";
 
 const STATS = [
   {
@@ -31,27 +33,33 @@ const STATS = [
 
 export default function StatsBar() {
   return (
-    <div className="flex items-center">
-      <div className="bg-white/10 inline-flex gap-3 justify-center items-start p-4 rounded-2xl mx-auto">
-        {STATS.map(({ Icon, value, label, dividerAfter }, i) => (
-          <div
-            key={i}
-            className={`flex flex-1 gap-2 items-start min-w-0 w-44 h-16 ${dividerAfter ? "border-r-4 border-white/20" : ""}`}
-          >
-            <div className="shrink-0 size-8 bg-primary/20 rounded-full flex items-center justify-center">
-              <Icon size={16} className="text-primary" />
+    <>
+      <Card className="mx-auto hidden md:block max-w-4xl">
+        <div className="flex">
+          {STATS.map(({ Icon, value, label, dividerAfter }, i) => (
+            <StatsItem
+              key={i}
+              icon={Icon}
+              value={value}
+              label={label}
+              dividerAfter={dividerAfter}
+              className="w-44 h-16"
+            />
+          ))}
+        </div>
+      </Card>
+      <div className="grid grid-cols-2 gap-2 items-stretch md:hidden">
+        {STATS.map(({ Icon, value, label }, i) => {
+          const isLastOdd = i === STATS.length - 1 && STATS.length % 2 !== 0;
+          return (
+            <div key={i} className={`h-full ${isLastOdd ? "col-span-2 flex justify-center" : ""}`}>
+              <Card className={`h-full ${isLastOdd ? "w-1/2" : "w-full"}`}>
+                <StatsItem icon={Icon} value={value} label={label} />
+              </Card>
             </div>
-            <div className="flex flex-col gap-2 flex-1 min-w-0">
-              <p className="font-montserrat font-medium text-[#dedede] text-[36px] leading-6 tracking-[0.72px]">
-                {value}
-              </p>
-              <p className="font-montserrat font-light text-[#adadad] text-[12px] leading-6 tracking-[0.24px]">
-                {label}
-              </p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-    </div>
+    </>
   );
 }
