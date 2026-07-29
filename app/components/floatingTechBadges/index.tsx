@@ -1,20 +1,9 @@
 "use client";
 
 import FeatherIcon from "feather-icons-react";
+import { FloatingBadge, FloatingTechBadgesProps } from "./types";
 
-type Badge = {
-  id: string;
-  label: string;
-  icon: string;
-  color: string;
-  size: number;
-  animationName: string;
-  delay: string;
-  initialLeft: number;
-  initialTop: number;
-};
-
-const badges: Badge[] = [
+const badges: FloatingBadge[] = [
   {
     id: "mysql",
     label: "MySQL",
@@ -94,11 +83,7 @@ const badges: Badge[] = [
   },
 ];
 
-export default function FloatingTechBadges({
-  className,
-}: {
-  className?: string;
-}) {
+export default function FloatingTechBadges({ className }: FloatingTechBadgesProps) {
   return (
     <div
       className={`relative overflow-hidden ${className ?? ""}`}

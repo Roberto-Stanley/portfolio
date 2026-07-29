@@ -1,20 +1,12 @@
-import Image from "next/image";
+import TechBadge from "./techBadge";
+import { TechBadgeProps } from "./techBadge/types";
+import { TechBadgesStripProps } from "./types";
 
 const TECH_LOGO_A = "/img/tech-logos-a.png";
-// Figma file does not contain a distinct "image 11" sprite — fall back to A.
 const TECH_LOGO_B = "/img/tech-logos-a.png";
 const TECH_LOGO_C = "/img/tech-logos-c.png";
 
-/**
- * Each badge entry: source image and its crop inset (percentage-based,
- * matching the Figma sprite-sheet offsets for each logo).
- */
-type BadgeEntry = {
-  src: string;
-  inset: string;
-};
-
-const BADGES: BadgeEntry[] = [
+const BADGES: TechBadgeProps[] = [
   { src: TECH_LOGO_A, inset: "inset-[-229.73%_-99.63%_-155.31%_-116.16%]" },
   { src: TECH_LOGO_A, inset: "inset-[-332.43%_-201.65%_-52.61%_-14.14%]" },
   { src: TECH_LOGO_A, inset: "inset-[-229.73%_-209.73%_-155.31%_-6.06%]" },
@@ -36,48 +28,15 @@ const BADGES: BadgeEntry[] = [
   { src: TECH_LOGO_C, inset: "inset-[-343.24%_-129.99%_-109.46%_-36.36%]" },
 ];
 
-function Badge({ src, inset }: BadgeEntry) {
+export default function TechBadgesStrip({ className }: TechBadgesStripProps) {
   return (
-    <div className="bg-decorative h-[52px] overflow-hidden relative rounded-[40px] shrink-0 w-[69px]">
-      <div className={`absolute ${inset}`}>
-        <Image
-          fill
-          alt=""
-          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-          src={src}
-        />
-      </div>
-    </div>
-  );
-}
-
-/**
- * TechBadgesStrip
- *
- * Infinite horizontal marquee of tech logo badges scrolling left.
- * The strip duplicates its badge list so the animation loops seamlessly:
- * translateX(-50%) moves exactly one full set width, then resets to 0.
- *
- * Animation speed: ~30 s per cycle (≈ 100 px/s).
- * Pause on hover via the `group-hover:pause` pattern if needed.
- */
-export default function TechBadgesStrip({ className }: { className?: string }) {
-  return (
-    <div
-      className={`bg-[#070827] h-[111px] overflow-hidden w-full ${className ?? ""}`}
-    >
-      {/*
-        The track is wider than the viewport and contains two identical badge
-        sets. animate-marquee slides it from translateX(0) → translateX(-50%),
-        which equals exactly one set width, then loops seamlessly.
-      */}
+    <div className={`bg-[#070827] h-[111px] overflow-hidden w-full ${className ?? ""}`}>
       <div className="flex gap-[92px] items-center h-full w-max animate-marquee pl-[23px]">
         {BADGES.map((badge, i) => (
-          <Badge key={i} {...badge} />
+          <TechBadge key={i} {...badge} />
         ))}
-        {/* Duplicate set for seamless loop */}
         {BADGES.map((badge, i) => (
-          <Badge key={`d${i}`} {...badge} />
+          <TechBadge key={`d${i}`} {...badge} />
         ))}
       </div>
     </div>

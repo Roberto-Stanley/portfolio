@@ -1,4 +1,4 @@
-import FloatingTechBadges from "@/app/components/FloatingTechBadges";
+import FloatingTechBadges from "@/app/components/floatingTechBadges";
 import Container from "@/app/components/container";
 import Text from "@/app/components/text";
 import StatsBar from "@/app/components/statsBar";
