@@ -67,7 +67,7 @@ export default {
       animation: {
         "typing-loop":
           "typing 3.5s steps(13, end) forwards, blink-cursor-three 1.8s step-end 3.5s 1 forwards",
-        marquee: "marquee 30s linear infinite",
+        marquee: "marquee 60s linear infinite",
         "orbital-spin": "orbital-spin 60s linear infinite",
         "orbital-counter-spin": "orbital-counter-spin 20s linear infinite",
       },

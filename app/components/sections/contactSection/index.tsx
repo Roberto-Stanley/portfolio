@@ -1,39 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Button from "../../button";
-import Image from "next/image";
-import Container from "../../container";
-
-const ICON_PHONE_1 = "/icons/icon-phone-1.svg";
-const ICON_PHONE_2 = "/icons/icon-phone-2.svg";
-const ICON_PHONE_3 = "/icons/icon-phone-3.svg";
-const ICON_EMAIL = "/icons/icon-email.svg";
-const ICON_LINKEDIN_1 = "/icons/icon-linkedin-1.svg";
-const ICON_LINKEDIN_2 = "/icons/icon-linkedin-2.svg";
-
-function InputField({
-  label,
-  placeholder,
-  type = "text",
-}: {
-  label: string;
-  placeholder: string;
-  type?: string;
-}) {
-  return (
-    <div className="flex flex-col gap-1.5 h-[79px] items-start ">
-      <label className="font-primary font-normal leading-[29px] text-base text-white whitespace-nowrap">
-        {label}
-      </label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        className="bg-[#070827] border border-primary flex flex-1 items-center min-h-0 overflow-hidden px-3.5 py-2.5 rounded-lg shadow-sm w-full text-base text-[#3d3d3d] font-primary placeholder:text-[#3d3d3d] focus:outline-none focus:shadow-[0_0_0_1px_#a3ffdc]"
-      />
-    </div>
-  );
-}
+import Button from "@/app/components/button";
+import Container from "@/app/components/container";
+import InputField from "./inputField";
+import Text from "@/app/components/text";
+import { Github, Linkedin, Smartphone } from "feather-icons-react";
 
 export default function ContactSection() {
   const [message, setMessage] = useState("");
@@ -54,86 +26,40 @@ export default function ContactSection() {
           {/* Left: info + social */}
           <div className="flex flex-col gap-16 items-center w-[467px]">
             <div className="flex flex-col gap-6 items-center text-center w-full">
-              <h2 className="font-second font-normal text-[32px] leading-10 text-white w-full">
-                Get in touch!
-              </h2>
-              <p className="font-primary font-normal leading-6 text-[#b0b0b0] text-xl w-full">
+              <Text type="title">Get in touch!</Text>
+              <Text type="body" weight="light">
                 {text}
-              </p>
+              </Text>
             </div>
 
             <div className="flex gap-[52px] items-center">
-              {/* Phone icon */}
-              <div className="overflow-hidden relative shrink-0 size-[45px]">
-                <div className="absolute inset-[33.33%_8.33%_12.5%_41.67%]">
-                  <div className="absolute inset-[-6.15%_-6.67%]">
-                    <Image
-                      fill
-                      alt=""
-                      className="block max-w-none size-full"
-                      src={ICON_PHONE_1}
-                    />
-                  </div>
-                </div>
-                <div className="absolute bottom-[12.5%] left-[8.33%] right-3/4 top-[37.5%]">
-                  <div className="absolute inset-[-4.44%_-13.33%]">
-                    <Image
-                      fill
-                      alt=""
-                      className="block max-w-none size-full"
-                      src={ICON_PHONE_2}
-                    />
-                  </div>
-                </div>
-                <div className="absolute bottom-3/4 left-[8.33%] right-3/4 top-[8.33%]">
-                  <div className="absolute inset-[-13.33%]">
-                    <Image
-                      fill
-                      alt=""
-                      className="block max-w-none size-full"
-                      src={ICON_PHONE_3}
-                    />
-                  </div>
-                </div>
-              </div>
+              <Button
+                shape="rounded"
+                variant="ghost"
+                href="https://github.com/Roberto-Stanley"
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<Github size={18} className="text-white" />}
+              />
 
-              {/* Email icon */}
-              <div className="overflow-hidden relative shrink-0 size-[45px]">
-                <div className="absolute inset-[12.5%]">
-                  <div className="absolute inset-[-4.44%]">
-                    <Image
-                      fill
-                      alt=""
-                      className="block max-w-none size-full"
-                      src={ICON_EMAIL}
-                    />
-                  </div>
-                </div>
-              </div>
+              {/* LinkedIn icon button */}
+              <Button
+                shape="rounded"
+                variant="ghost"
+                href="https://www.linkedin.com/in/roberto-reyes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<Linkedin size={18} className="text-white" />}
+              />
 
-              {/* LinkedIn icon */}
-              <div className="overflow-hidden relative shrink-0 size-[45px]">
-                <div className="absolute inset-[16.67%_8.33%]">
-                  <div className="absolute inset-[-5%_-4%]">
-                    <Image
-                      fill
-                      alt=""
-                      className="block max-w-none size-full"
-                      src={ICON_LINKEDIN_1}
-                    />
-                  </div>
-                </div>
-                <div className="absolute bottom-[45.83%] left-[8.33%] right-[8.33%] top-1/4">
-                  <div className="absolute inset-[-11.43%_-4%]">
-                    <Image
-                      fill
-                      alt=""
-                      className="block max-w-none size-full"
-                      src={ICON_LINKEDIN_2}
-                    />
-                  </div>
-                </div>
-              </div>
+              <Button
+                shape="rounded"
+                variant="ghost"
+                href="https://www.linkedin.com/in/roberto-reyes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<Smartphone size={18} className="text-white" />}
+              />
             </div>
           </div>
 
