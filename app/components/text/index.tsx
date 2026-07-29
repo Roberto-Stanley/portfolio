@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 import { TextProps } from "./types";
 
 export default function Text({
@@ -33,5 +34,5 @@ export default function Text({
 
   elementClass += ` font-${weight}`;
 
-  return <Tag className={`${elementClass} ${className}`}>{children}</Tag>;
+  return <Tag className={twMerge(elementClass, className)}>{children}</Tag>;
 }
