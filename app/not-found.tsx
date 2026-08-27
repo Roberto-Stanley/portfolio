@@ -9,16 +9,21 @@ export default function NotFound() {
     <main className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
       <AnimationBlur />
       <Container className="relative z-10 flex flex-col items-center text-center gap-6">
-        <p className="font-second font-semibold leading-none text-secondary"
-          style={{ fontSize: "clamp(6rem, 20vw, 12rem)" }}>
+        <Text
+          type="heading"
+          tag="p"
+          weight="semibold"
+          className="leading-none text-secondary"
+          style={{ fontSize: "clamp(6rem, 20vw, 12rem)" }}
+        >
           404
-        </p>
+        </Text>
 
-        <Text type="sub-title">// page not found</Text>
+        <Text type="sub-title">page not found</Text>
 
-        <h1 className="font-second text-3xl md:text-4xl text-content-primary leading-tight">
+        <Text type="title" tag="h1">
           You&apos;ve wandered off the map
-        </h1>
+        </Text>
 
         <Text type="body" className="max-w-md">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
