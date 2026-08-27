@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import { Home } from "feather-icons-react";
 import AnimationBlur from "@/app/components/animationBlur";
 import Container from "@/app/components/container";
