@@ -7,7 +7,13 @@ import NavTracker from "./components/navigation/navTracker";
 import ToolsSection from "./components/sections/toolsSection";
 import AnimationBlur from "./components/animationBlur";
 
-export default function Home() {
+// TODO: replace with real data fetching
+async function loadData() {
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+}
+
+export default async function Home() {
+  await loadData();
   return (
     <main className=" overflow-x-hidden">
       <AnimationBlur />
