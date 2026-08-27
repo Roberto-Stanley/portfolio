@@ -1,8 +1,12 @@
 # General instructions
+
 - use 2 spaces as indentation
-- name directories and files in `camelCase` and name types, classes, interfaces, and components in `PascalCase` 
+- name directories and files in `camelCase` and name types, classes, interfaces, and components in `PascalCase`
+- could you please always destructure the props in the component and use them instead of using `props` directly
+- please destructure objects when is possible
 
 ## components instructions
+
 - the components for the frontend should be created in the `app/components` folder
 - each component should be created into a separate folder with the same name as the component
 - each component should be called `index.ts`
