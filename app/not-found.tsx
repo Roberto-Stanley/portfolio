@@ -3,8 +3,11 @@ import AnimationBlur from "@/app/components/animationBlur";
 import Container from "@/app/components/container";
 import Button from "@/app/components/button";
 import Text from "@/app/components/text";
+import { getNotFoundContent } from "@/lib/contentful/notFound";
 
-export default function NotFound() {
+export default async function NotFound() {
+  const { label, title, subTitle, description, buttonText } = await getNotFoundContent();
+
   return (
     <main className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
       <AnimationBlur />
@@ -16,26 +19,27 @@ export default function NotFound() {
           className="leading-none text-secondary"
           style={{ fontSize: "clamp(6rem, 20vw, 12rem)" }}
         >
-          404
+          {label}
         </Text>
 
-        <Text type="sub-title">page not found</Text>
+        <Text type="sub-title">{subTitle}</Text>
 
         <Text type="title" tag="h1">
-          You&apos;ve wandered off the map
+          {title}
         </Text>
 
-        <Text type="body" className="max-w-md">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
-          Head back home and keep exploring.
-        </Text>
+        {description && (
+          <Text type="body" className="max-w-md">
+            {description}
+          </Text>
+        )}
 
         <Button
           href="/"
           icon={<Home size={18} className="text-white" />}
           iconPosition="left"
         >
-          Back to Home
+          {buttonText}
         </Button>
       </Container>
     </main>
