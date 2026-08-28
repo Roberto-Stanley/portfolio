@@ -1,11 +1,5 @@
 import { contentfulClient } from "../client";
-import { TestimonialSectionSkeleton, TestimonialEntry } from "./types";
-import { TestimonialCardProps } from "@/app/components/sections/testimonialSection/testimonialCard/types";
-
-type TestimonialSectionContent = {
-  title: string;
-  testimonials: TestimonialCardProps[];
-};
+import { TestimonialSectionSkeleton, TestimonialEntry, TestimonialSectionContent } from "./types";
 
 export async function getTestimonials(): Promise<TestimonialSectionContent> {
   const entries = await contentfulClient.getEntries<TestimonialSectionSkeleton>({
