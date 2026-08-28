@@ -1,4 +1,4 @@
-export type FeedbackCardProps = {
+export type TestimonialCardProps = {
   name: string;
   company: string;
   photo: string;

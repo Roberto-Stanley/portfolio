@@ -1,8 +1,9 @@
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 import Text from "@/app/components/text";
-import { FeedbackCardProps } from "./types";
+import { TestimonialCardProps } from "./types";
 
-export default function FeedbackCard({ name, company, photo, quote }: FeedbackCardProps) {
+export default function TestimonialCard({ name, company, photo, quote }: TestimonialCardProps) {
   return (
     <div className="flex flex-col gap-[21px] items-center w-full">
       <div className="flex gap-6 items-center">
@@ -25,13 +26,9 @@ export default function FeedbackCard({ name, company, photo, quote }: FeedbackCa
         </div>
       </div>
 
-      <Text
-        type="body"
-        className="text-xl italic text-white text-center"
-        weight="light"
-      >
-        {quote}
-      </Text>
+      <div className="text-xl italic text-white text-center font-light">
+        <ReactMarkdown>{quote}</ReactMarkdown>
+      </div>
     </div>
   );
 }
