@@ -1,4 +1,4 @@
-import FeedbackSection from "./components/sections/feedbackSection";
+import TestimonialSection from "./components/sections/testimonialSection";
 import ContactSection from "./components/sections/contactSection";
 import HeroSection from "./components/sections/heroSection";
 import AboutSection from "./components/sections/aboutSection";
@@ -26,7 +26,7 @@ export default async function Home() {
 
       <ExperienceSection />
 
-      <FeedbackSection />
+      <TestimonialSection />
 
       <ToolsSection />
 
