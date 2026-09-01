@@ -16,3 +16,9 @@
 - always use the TailwindCSS classes instead of writing custom CSS, and let me know if there is not a tailwind class for your use case
 - we need to have a file for each component
 - we also need to have the types in a file called `types.ts` in the same folder as the component
+
+## Contentful entries instructions
+
+- we need to create a directory for each contentful entry in the `lib/contentful` folder
+- we also need to index.ts where we will make the request to get and export the data from contentful
+- we need to create a types.ts file where we will define the types for the contentful entry
