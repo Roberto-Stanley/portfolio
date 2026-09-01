@@ -11,13 +11,18 @@ export type BaseProps = {
   size?: ButtonSize;
   variant?: ButtonVariant;
   shape?: ButtonShape;
-  icon?: React.ReactNode;
+  icon?: string | number | symbol;
   iconPosition?: ButtonIconPosition;
+  iconFill?: string;
+  iconStroke?: string;
 };
 
 export type WithHref = BaseProps &
   Omit<LinkProps, keyof BaseProps> &
-  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps | "href"> & {
+  Omit<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    keyof BaseProps | "href"
+  > & {
     href: string;
   };
 

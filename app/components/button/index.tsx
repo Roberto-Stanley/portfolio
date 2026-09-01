@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Props, WithHref } from "./type";
+import FeatherIcon from "feather-icons-react";
 
 export default function Button({
   children,
@@ -9,6 +10,8 @@ export default function Button({
   shape = "square",
   icon,
   iconPosition = "right",
+  iconFill,
+  iconStroke,
   ...rest
 }: Props) {
   const isIconOnly = shape === "rounded";
@@ -17,7 +20,9 @@ export default function Button({
   const shapeClasses = isIconOnly ? "rounded-full p-2" : "rounded-5xl";
   const sizeClasses = isIconOnly
     ? ""
-    : size === "s" ? "gap-2 px-2 py-1" : "gap-2 px-4 py-2";
+    : size === "s"
+      ? "gap-2 px-2 py-1"
+      : "gap-2 px-4 py-2";
 
   const variantClasses = isGhost
     ? "bg-white/10 hover:bg-primary-hover active:bg-primary-active"
@@ -34,11 +39,17 @@ export default function Button({
       className={`flex items-center justify-center backdrop-blur-sm transition-colors ${shapeClasses} ${sizeClasses} ${variantClasses}`}
     >
       {isIconOnly ? (
-        icon
+        <FeatherIcon icon={icon!} fill={iconFill} stroke={iconStroke} />
       ) : iconPosition === "left" ? (
-        <>{icon}{textSpan}</>
+        <>
+          <FeatherIcon icon={icon!} fill={iconFill} stroke={iconStroke} />
+          {textSpan}
+        </>
       ) : (
-        <>{textSpan}{icon}</>
+        <>
+          {textSpan}
+          <FeatherIcon icon={icon!} fill={iconFill} stroke={iconStroke} />
+        </>
       )}
     </div>
   );

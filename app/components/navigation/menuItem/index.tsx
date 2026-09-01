@@ -1,8 +1,9 @@
+import FeatherIcon from "feather-icons-react";
 import Link from "next/link";
 
 type Props = {
   children: React.ReactNode;
-  icon: React.ReactNode;
+  icon: string;
   href: string;
   active?: boolean;
 };
@@ -21,7 +22,7 @@ export default function MenuItem({ children, icon, href, active }: Props) {
           {children}
         </span>
         <span className="sm:hidden text-content-primary flex items-center justify-center">
-          {icon}
+          <FeatherIcon icon={icon} stroke="white" />
         </span>
         {active && (
           <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-secondary" />
