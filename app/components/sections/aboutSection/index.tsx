@@ -1,7 +1,8 @@
 import Image from "next/image";
-import Orbital from "../../orbital";
+import Orbital from "@/app/components/orbital";
 import Text from "@/app/components/text";
 import Container from "@/app/components/container";
+import StatItem from "@/app/components/statItem";
 
 const PROFILE_PHOTO = "/img/profile-photo.jpg";
 
@@ -27,13 +28,6 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-
-          {/* Cloud labels — grid-overlaid using ml/mt offsets */}
-          {/* <FakeTooltip label="Team leader" ml={324} mt={49} />
-          <FakeTooltip label="Frontend" ml={489} mt={213} />
-          <FakeTooltip label="Backend" ml={163} mt={471} />
-          <FakeTooltip label="Full stack" ml={101} mt={298} />
-          <FakeTooltip label="DevOps" ml={437} mt={577} /> */}
         </div>
 
         {/* Bio */}
@@ -58,22 +52,8 @@ export default function AboutSection() {
           </Text>
 
           <div className="flex gap-10">
-            <div className="flex flex-col">
-              <Text type="heading" weight="semibold">
-                8 +
-              </Text>
-              <Text type="sub-body" weight="light" className="capitalize">
-                Years Exp.
-              </Text>
-            </div>
-            <div className="flex flex-col">
-              <Text type="heading" weight="semibold">
-                17 +
-              </Text>
-              <Text type="sub-body" weight="light" className="capitalize">
-                Projects
-              </Text>
-            </div>
+            <StatItem value="8 +" label="Years Exp." />
+            <StatItem value="17 +" label="Projects" />
           </div>
         </div>
       </Container>

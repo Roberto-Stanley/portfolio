@@ -1,4 +1,4 @@
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 import { Home } from "feather-icons-react";
 import AnimationBlur from "@/app/components/animationBlur";
