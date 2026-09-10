@@ -1,6 +1,5 @@
 export const dynamic = "force-dynamic";
 
-import { Home } from "feather-icons-react";
 import AnimationBlur from "@/app/components/animationBlur";
 import Container from "@/app/components/container";
 import Button from "@/app/components/button";
@@ -8,7 +7,8 @@ import Text from "@/app/components/text";
 import { getNotFoundContent } from "@/lib/contentful/notFound";
 
 export default async function NotFound() {
-  const { label, title, subTitle, description, buttonText } = await getNotFoundContent();
+  const { label, title, subTitle, description, buttonText } =
+    await getNotFoundContent();
 
   return (
     <main className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden">
@@ -36,11 +36,7 @@ export default async function NotFound() {
           </Text>
         )}
 
-        <Button
-          href="/"
-          icon={<Home size={18} className="text-white" />}
-          iconPosition="left"
-        >
+        <Button href="/" icon="home" iconStroke="white" iconPosition="left">
           {buttonText}
         </Button>
       </Container>

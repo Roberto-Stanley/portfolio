@@ -7,7 +7,6 @@ export async function getAboutSection(): Promise<AboutSectionContent> {
     include: 2,
     limit: 1,
   });
-  console.log("important entries", entries);
   const section = entries.items[0];
 
   if (!section) {
