@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Menu from "@/app/components/navigation/menu";
+import { MenuContent } from "@/lib/contentful/menu/types";
+
+type Props = {
+  menu: MenuContent;
+};
 
 const SECTIONS = ["hero", "about", "projects"];
 
-export default function NavTracker() {
+export default function NavTracker({ menu }: Props) {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
@@ -31,5 +36,5 @@ export default function NavTracker() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
-  return <Menu activeSection={activeSection} />;
+  return <Menu menu={menu} activeSection={activeSection} />;
 }

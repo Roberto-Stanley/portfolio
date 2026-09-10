@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, MapPin } from "feather-icons-react";
+import { MapPin } from "feather-icons-react";
 import Text from "@/app/components/text";
 import Card from "@/app/components/card";
 import Badge from "@/app/components/badge";
@@ -24,7 +24,9 @@ export default function ExperienceCard({
         <div className="relative h-[111px] w-[148px] rounded-lg overflow-hidden shrink-0">
           <Image src={imageSrc} alt={title} fill className="object-cover" />
         </div>
-        <Button icon={<ArrowUpRight className="text-white" />}>Ver</Button>
+        <Button icon="arrow-up-right" iconStroke="white">
+          Ver
+        </Button>
       </div>
 
       {/* Right column: title, company, location, description */}
