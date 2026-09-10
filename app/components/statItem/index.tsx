@@ -7,7 +7,7 @@ export default function StatItem({ value, label }: StatItemProps) {
       <Text type="heading" weight="semibold">
         {value}
       </Text>
-      <Text type="sub-body" weight="light" className="capitalize">
+      <Text type="sub-body" weight="light">
         {label}
       </Text>
     </div>
