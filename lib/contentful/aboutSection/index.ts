@@ -1,4 +1,5 @@
 import { contentfulClient } from "../client";
+import type { SectionBlockEntry } from "@/lib/contentful/types";
 import { AboutSectionSkeleton, AboutSectionContent, StatEntry } from "./types";
 
 export async function getAboutSection(): Promise<AboutSectionContent> {
@@ -10,10 +11,12 @@ export async function getAboutSection(): Promise<AboutSectionContent> {
   const section = entries.items[0];
 
   if (!section) {
-    return { title: "", subTitle: "", description: "", statItems: [] };
+    return { title: "", statItems: [] };
   }
 
-  const { title, subTitle, description, statItems } = section.fields;
+  const { sectionBLock, statItems } = section.fields;
+
+  const { title, subTitle, description } = (sectionBLock as SectionBlockEntry).fields;
 
   const resolvedStatItems = (statItems ?? [])
     .filter((item): item is StatEntry => "fields" in item)
@@ -24,7 +27,7 @@ export async function getAboutSection(): Promise<AboutSectionContent> {
 
   return {
     title,
-    subTitle: subTitle ?? "",
+    subTitle,
     description,
     statItems: resolvedStatItems,
   };
