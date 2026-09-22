@@ -1,5 +1,8 @@
 import type { Entry, EntryFieldTypes, EntrySkeletonType } from "contentful";
-import type { SectionBlockSkeleton, SectionBlockContent } from "@/lib/contentful/types";
+import type {
+  SectionBlockSkeleton,
+  SectionBlockContent,
+} from "@/lib/contentful/types";
 
 export interface ExperienceSkeleton extends EntrySkeletonType {
   contentTypeId: "experience";
@@ -18,11 +21,13 @@ export interface ExperienceSkeleton extends EntrySkeletonType {
 export type ExperienceEntry = Entry<ExperienceSkeleton, undefined, string>;
 
 export interface ExperiencesSectionSkeleton extends EntrySkeletonType {
-  contentTypeId: "experiencesSection";
+  contentTypeId: "experienceSection";
   fields: {
     name: EntryFieldTypes.Symbol;
     sectionBlock?: EntryFieldTypes.EntryLink<SectionBlockSkeleton>;
-    experienceItems: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<ExperienceSkeleton>>;
+    experienceItems: EntryFieldTypes.Array<
+      EntryFieldTypes.EntryLink<ExperienceSkeleton>
+    >;
   };
 }
 

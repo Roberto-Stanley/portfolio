@@ -8,11 +8,13 @@ import {
 } from "./types";
 
 export async function getExperiencesSection(): Promise<ExperiencesSectionContent> {
-  const entries = await contentfulClient.getEntries<ExperiencesSectionSkeleton>({
-    content_type: "experiencesSection",
-    include: 2,
-    limit: 1,
-  });
+  const entries = await contentfulClient.getEntries<ExperiencesSectionSkeleton>(
+    {
+      content_type: "experienceSection",
+      include: 2,
+      limit: 1,
+    },
+  );
   const section = entries.items[0];
 
   if (!section) {
