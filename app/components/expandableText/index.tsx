@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { ExpandableDescriptionProps } from "./types";
+import { ExpandableTextProps } from "./types";
 
 const lineClampClass: Record<number, string> = {
   1: "line-clamp-1",
@@ -17,10 +17,12 @@ const lineClampClass: Record<number, string> = {
   10: "line-clamp-10",
 };
 
-export default function ExpandableDescription({
-  description,
+export default function ExpandableText({
+  text,
   collapsedLines = 8,
-}: ExpandableDescriptionProps) {
+  className,
+  buttonClassName,
+}: ExpandableTextProps) {
   const [expanded, setExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -30,20 +32,20 @@ export default function ExpandableDescription({
     if (el) {
       setIsOverflowing(el.scrollHeight > el.clientHeight);
     }
-  }, [description]);
+  }, [text]);
 
   return (
-    <div className="font-primary text-base text-content-secondary font-light [&_ul]:list-disc [&_ul]:pl-4 [&_li]:mb-1 [&_strong]:font-semibold">
+    <div>
       <div
         ref={contentRef}
-        className={!expanded ? lineClampClass[collapsedLines] : undefined}
+        className={`${className ?? ""} ${!expanded ? (lineClampClass[collapsedLines] ?? "") : ""}`.trim()}
       >
-        <ReactMarkdown>{description}</ReactMarkdown>
+        <ReactMarkdown>{text}</ReactMarkdown>
       </div>
       {(isOverflowing || expanded) && (
         <button
           onClick={() => setExpanded((prev) => !prev)}
-          className="mt-1 text-sm text-primary hover:underline"
+          className={buttonClassName ?? "mt-1 text-sm text-primary hover:underline"}
         >
           {expanded ? "Show less" : "Show more"}
         </button>

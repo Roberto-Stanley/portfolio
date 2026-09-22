@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { MapPin } from "feather-icons-react";
-import ExpandableDescription from "./expandableDescription";
+import ExpandableText from "@/app/components/expandableText";
 import Text from "@/app/components/text";
 import Card from "@/app/components/card";
 import Badge from "@/app/components/badge";
@@ -56,7 +56,10 @@ export default function ExperienceCard({
             </Text>
           </div>
         </div>
-        <ExpandableDescription description={description} />
+        <ExpandableText
+          text={description}
+          className="font-primary text-base text-content-secondary font-light [&_ul]:list-disc [&_ul]:pl-4 [&_li]:mb-1 [&_strong]:font-semibold"
+        />
       </div>
     </Card>
   );
