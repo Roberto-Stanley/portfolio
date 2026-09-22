@@ -1,6 +1,6 @@
 export type ExperienceCardProps = {
   years: string;
-  imageSrc: string;
+  imageSrc?: string;
   title: string;
   company: string;
   location: string;
