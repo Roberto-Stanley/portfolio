@@ -22,9 +22,11 @@ export default function ExperienceCard({
         <Badge>
           <Text type="sub-body">{years}</Text>
         </Badge>
-        <div className="relative h-[111px] w-[148px] rounded-lg overflow-hidden shrink-0">
-          <Image src={imageSrc} alt={title} fill className="object-cover" />
-        </div>
+        {imageSrc && (
+          <div className="relative h-[111px] w-[148px] rounded-lg overflow-hidden shrink-0">
+            <Image src={imageSrc} alt={title} fill className="object-cover" />
+          </div>
+        )}
         <Button icon="arrow-up-right" iconStroke="white">
           Ver
         </Button>
