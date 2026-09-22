@@ -5,4 +5,5 @@ export type ExperienceCardProps = {
   company: string;
   location: string;
   description: string;
+  link?: string;
 };
