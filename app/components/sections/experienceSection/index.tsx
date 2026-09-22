@@ -10,16 +10,25 @@ export default async function ExperienceSection() {
   const { sectionBlock, experienceItems } = await getExperiencesSection();
 
   const experiences = experienceItems.map(
-    ({ title, companyName, description, type, image, starteAt, endedAt }) => ({
+    ({
+      title,
+      companyName,
+      description,
+      type,
+      image,
+      link,
+      starteAt,
+      endedAt,
+    }) => ({
       years: endedAt ? `${starteAt} - ${endedAt}` : starteAt,
-      imageSrc: image ?? "",
+      imageSrc: image,
       title,
       company: companyName ?? "",
       location: type,
       description,
+      link,
     }),
   );
-  console.log("important", experiences);
   return (
     <section id="projects" className="w-full relative mb-52">
       <div className="flex flex-row justify-between items-center gap-12 mb-24">

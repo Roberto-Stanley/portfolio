@@ -14,6 +14,7 @@ export default function ExperienceCard({
   company,
   location,
   description,
+  link,
 }: ExperienceCardProps) {
   return (
     <Card className="flex gap-3 items-start w-full">
@@ -27,9 +28,11 @@ export default function ExperienceCard({
             <Image src={imageSrc} alt={title} fill className="object-cover" />
           </div>
         )}
-        <Button icon="arrow-up-right" iconStroke="white">
-          Ver
-        </Button>
+        {link && (
+          <Button icon="arrow-up-right" iconStroke="white" href={link} target="_blank" rel="noopener noreferrer">
+            Ver
+          </Button>
+        )}
       </div>
 
       {/* Right column: title, company, location, description */}
