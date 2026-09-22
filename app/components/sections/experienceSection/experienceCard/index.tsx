@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 import { MapPin } from "feather-icons-react";
 import Text from "@/app/components/text";
 import Card from "@/app/components/card";
@@ -50,9 +51,9 @@ export default function ExperienceCard({
             </Text>
           </div>
         </div>
-        <Text type="body" weight="light">
-          {description}
-        </Text>
+        <div className="font-primary text-base text-content-secondary font-light [&_ul]:list-disc [&_ul]:pl-4 [&_li]:mb-1 [&_strong]:font-semibold">
+          <ReactMarkdown>{description}</ReactMarkdown>
+        </div>
       </div>
     </Card>
   );
