@@ -30,6 +30,12 @@ export default {
         second: ["Fira Code", "monospace"],
         alternative: ["Inter", "sans-serif"],
       },
+      lineClamp: {
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+      },
       borderWidth: {
         "3": "3px",
       },
