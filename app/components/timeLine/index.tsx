@@ -9,7 +9,7 @@ export default function TimeLine({ children }: TimeLineProps) {
       {/* Center vertical line */}
       <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-1.5 bg-primary-hover" />
 
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-12">
         {Array.from({ length: Math.ceil(items.length / 2) }, (_, pi) => {
           const leftItem = items[pi * 2];
           const rightItem = items[pi * 2 + 1];
