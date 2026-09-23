@@ -22,6 +22,7 @@ export default function ExpandableText({
   collapsedLines = 8,
   className,
   buttonClassName,
+  onExpandChange,
 }: ExpandableTextProps) {
   const [expanded, setExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
@@ -44,7 +45,11 @@ export default function ExpandableText({
       </div>
       {(isOverflowing || expanded) && (
         <button
-          onClick={() => setExpanded((prev) => !prev)}
+          onClick={() => {
+            const next = !expanded;
+            setExpanded(next);
+            onExpandChange?.(next);
+          }}
           className={buttonClassName ?? "mt-1 text-sm text-primary hover:underline"}
         >
           {expanded ? "Show less" : "Show more"}
