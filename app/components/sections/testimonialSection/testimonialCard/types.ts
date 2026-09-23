@@ -3,4 +3,5 @@ export type TestimonialCardProps = {
   company: string;
   photo: string;
   quote: string;
+  onExpandChange?: (expanded: boolean) => void;
 };

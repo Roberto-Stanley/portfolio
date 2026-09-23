@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Text from "@/app/components/text";
 import ExpandableText from "@/app/components/expandableText";
 import { TestimonialCardProps } from "./types";
 
-export default function TestimonialCard({ name, company, photo, quote }: TestimonialCardProps) {
+export default function TestimonialCard({ name, company, photo, quote, onExpandChange }: TestimonialCardProps) {
   return (
     <div className="flex flex-col gap-[21px] items-center w-full">
       <div className="flex gap-6 items-center">
@@ -30,6 +32,7 @@ export default function TestimonialCard({ name, company, photo, quote }: Testimo
         text={quote}
         className="text-xl italic text-white text-center font-light"
         buttonClassName="mt-1 text-sm text-primary hover:underline w-full text-center"
+        onExpandChange={onExpandChange}
       />
     </div>
   );

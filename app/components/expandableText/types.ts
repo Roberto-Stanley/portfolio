@@ -3,4 +3,5 @@ export type ExpandableTextProps = {
   collapsedLines?: number;
   className?: string;
   buttonClassName?: string;
+  onExpandChange?: (expanded: boolean) => void;
 };
