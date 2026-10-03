@@ -67,7 +67,7 @@ export default function Orbital({
   return (
     <div className={`overflow-hidden relative shrink-0 ${className}`}>
       <div
-        className="absolute -left-32 top-12 md:left-12"
+        className="absolute -left-32 top-12 md:left-4 xl:left-12"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "top left",
