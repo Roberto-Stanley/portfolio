@@ -1,3 +1,4 @@
+import type React from "react";
 import Link from "next/link";
 import type { Props, WithHref } from "./type";
 import FeatherIcon from "feather-icons-react";
@@ -34,21 +35,25 @@ export default function Button({
     </span>
   );
 
+  const iconEl = icon ? (
+    <FeatherIcon icon={icon} fill={iconFill} stroke={iconStroke} />
+  ) : null;
+
   const inner = (
     <div
       className={`flex items-center justify-center backdrop-blur-sm transition-colors ${shapeClasses} ${sizeClasses} ${variantClasses}`}
     >
       {isIconOnly ? (
-        <FeatherIcon icon={icon!} fill={iconFill} stroke={iconStroke} />
+        iconEl
       ) : iconPosition === "left" ? (
         <>
-          <FeatherIcon icon={icon!} fill={iconFill} stroke={iconStroke} />
+          {iconEl}
           {textSpan}
         </>
       ) : (
         <>
           {textSpan}
-          <FeatherIcon icon={icon!} fill={iconFill} stroke={iconStroke} />
+          {iconEl}
         </>
       )}
     </div>
@@ -69,6 +74,11 @@ export default function Button({
   }
 
   return (
-    <div className={`inline-flex items-start ${className || ""}`}>{inner}</div>
+    <button
+      className={`inline-flex items-start ${className || ""}`}
+      {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
+      {inner}
+    </button>
   );
 }

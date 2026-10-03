@@ -1,5 +1,6 @@
-export type InputFieldProps = {
+import type React from "react";
+
+export type InputFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  placeholder: string;
-  type?: string;
+  error?: string;
 };
