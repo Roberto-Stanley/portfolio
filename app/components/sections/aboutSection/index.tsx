@@ -14,11 +14,11 @@ export default async function AboutSection() {
     <section id="about" className="mb-52">
       {/* Orbital decoration with profile photo + cloud label overlays */}
       <Container className="flex flex-col-reverse lg:flex-row overflow-hidden">
-        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-w-full overflow-hidden">
-          <Orbital className="col-start-1 row-start-1 w-[700px] h-[700px]" />
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 max-w-full overflow-hidden self-center lg:self-auto">
+          <Orbital className="col-start-1 row-start-1 w-[600px] h-[600px] xl:w-[700px] xl:h-[700px]" />
 
           {/* Main profile photo overlaid on orbital center */}
-          <div className="bg-white col-start-1 row-start-1 ml-[8%] md:ml-[235px] mt-[240px] overflow-hidden relative rounded-[128px] size-[230px]">
+          <div className="bg-white col-start-1 row-start-1 ml-[74px] md:ml-[219px] xl:ml-[235px] mt-[256px] xl:mt-[240px] overflow-hidden relative rounded-[110px] xl:rounded-[128px] size-[197px] xl:size-[230px]">
             <div className="absolute inset-[0_-0.2%_-17.79%_-6.16%] rounded-[8px]">
               <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[8px]">
                 <Image
