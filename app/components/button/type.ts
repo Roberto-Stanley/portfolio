@@ -1,3 +1,4 @@
+import type React from "react";
 import { type LinkProps } from "next/link";
 
 export type ButtonSize = "s" | "m";
@@ -26,6 +27,7 @@ export type WithHref = BaseProps &
     href: string;
   };
 
-export type WithoutHref = BaseProps & { href?: never };
+export type WithoutHref = BaseProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & { href?: never };
 
 export type Props = WithHref | WithoutHref;

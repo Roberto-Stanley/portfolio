@@ -41,6 +41,14 @@
   box-sizing: border-box;
 }
 
+/* Prevent SVG elements from being event targets.
+   React accesses correspondingUseElement on event targets and Firefox throws
+   a security error when the target is an SVG element. Clicks still reach
+   the parent <button> or <a> element. */
+svg {
+  pointer-events: none;
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #070827;
