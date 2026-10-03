@@ -1,6 +1,6 @@
 "use client";
 
-import { useTransition } from "react";
+import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { twMerge } from "tailwind-merge";
@@ -12,6 +12,8 @@ import { sendContactInfo } from "@/app/actions";
 
 export default function ContactForm() {
   const [isPending, startTransition] = useTransition();
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
   const {
     register,
     handleSubmit,
@@ -21,9 +23,26 @@ export default function ContactForm() {
   });
 
   function onSubmit(data: ContactFormValues) {
+    setSubmitError(null);
     startTransition(async () => {
-      await sendContactInfo(data);
+      const result = await sendContactInfo(data);
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(result.error ?? "Something went wrong. Please try again.");
+      }
     });
+  }
+
+  if (submitted) {
+    return (
+      <div className="flex flex-col gap-4 items-center justify-center w-[504px] h-[350px] text-center">
+        <Text type="title">Message sent!</Text>
+        <Text type="body" weight="light">
+          Thanks for reaching out. I&apos;ll get back to you as soon as possible.
+        </Text>
+      </div>
+    );
   }
 
   return (
@@ -83,9 +102,14 @@ export default function ContactForm() {
         )}
       </div>
 
-      <Button type="submit" disabled={isPending}>
-        {isPending ? "Sending..." : "Submit"}
-      </Button>
+      <div className="flex flex-col gap-2 items-start">
+        <Button type="submit" disabled={isPending}>
+          {isPending ? "Sending..." : "Submit"}
+        </Button>
+        {submitError && (
+          <span className="text-red-500 text-xs">{submitError}</span>
+        )}
+      </div>
     </form>
   );
 }
