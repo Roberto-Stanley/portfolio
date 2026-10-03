@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, startTransition } from "react";
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { twMerge } from "tailwind-merge";
@@ -11,7 +11,7 @@ import { contactFormSchema, ContactFormValues } from "./types";
 import { sendContactInfo } from "@/app/actions";
 
 export default function ContactForm() {
-  const [state, action, pending] = useActionState(sendContactInfo, false);
+  const [isPending, startTransition] = useTransition();
   const {
     register,
     handleSubmit,
@@ -22,7 +22,7 @@ export default function ContactForm() {
 
   function onSubmit(data: ContactFormValues) {
     startTransition(async () => {
-      await action(data);
+      await sendContactInfo(data);
     });
   }
 
@@ -83,7 +83,9 @@ export default function ContactForm() {
         )}
       </div>
 
-      <Button type="submit">Submit</Button>
+      <Button type="submit" disabled={isPending}>
+        {isPending ? "Sending..." : "Submit"}
+      </Button>
     </form>
   );
 }
