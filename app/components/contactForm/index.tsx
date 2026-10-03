@@ -1,5 +1,6 @@
 "use client";
 
+import { useActionState, startTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { twMerge } from "tailwind-merge";
@@ -7,8 +8,10 @@ import Button from "@/app/components/button";
 import InputField from "@/app/components/inputField";
 import Text from "@/app/components/text";
 import { contactFormSchema, ContactFormValues } from "./types";
+import { sendContactInfo } from "@/app/actions";
 
 export default function ContactForm() {
+  const [state, action, pending] = useActionState(sendContactInfo, false);
   const {
     register,
     handleSubmit,
@@ -18,7 +21,9 @@ export default function ContactForm() {
   });
 
   function onSubmit(data: ContactFormValues) {
-    console.log(data);
+    startTransition(async () => {
+      await action(data);
+    });
   }
 
   return (
@@ -26,7 +31,7 @@ export default function ContactForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-wrap gap-5 items-start w-[504px]"
     >
-      <div className="grid grid-cols-2 gap-x-4 gap-y-5">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-5 items-start">
         <InputField
           label="Name"
           placeholder="John"
@@ -57,7 +62,12 @@ export default function ContactForm() {
 
       {/* Message textarea */}
       <div className="flex flex-col gap-1.5 h-[175px] items-start w-full">
-        <Text type="body" weight="medium" tag="label" className="text-content-primary">
+        <Text
+          type="body"
+          weight="medium"
+          tag="label"
+          className="text-content-primary"
+        >
           Message
         </Text>
         <textarea
@@ -65,7 +75,7 @@ export default function ContactForm() {
           placeholder="Your message..."
           className={twMerge(
             "bg-background border border-primary flex flex-1 items-start min-h-0 overflow-hidden px-3.5 py-2.5 rounded-lg shadow-sm w-full text-base text-content-primary font-primary placeholder:text-decorative resize-none focus:outline-none focus:shadow-[0_0_0_1px_#a3ffdc]",
-            errors.message && "border-red-500"
+            errors.message && "border-red-500",
           )}
         />
         {errors.message && (
