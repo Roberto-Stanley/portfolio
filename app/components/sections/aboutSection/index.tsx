@@ -44,9 +44,13 @@ export default async function AboutSection() {
             </Text>
           </div>
 
-          <Text type="body" weight="light" className="mb-6">
-            {description}
-          </Text>
+          <div className="flex flex-col gap-4 mb-6">
+            {description?.split("\n\n").map((paragraph, index) => (
+              <Text key={index} type="body" weight="light">
+                {paragraph}
+              </Text>
+            ))}
+          </div>
 
           <div className="flex gap-10">
             {statItems.map(({ value, label }) => (
