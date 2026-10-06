@@ -1,8 +1,8 @@
-import { contentfulClient } from "../client";
+import { getEntries } from "../client";
 import { MenuSkeleton, MenuItemEntry, MenuContent } from "./types";
 
 export async function getMenu(): Promise<MenuContent> {
-  const entries = await contentfulClient.getEntries<MenuSkeleton>({
+  const entries = await getEntries<MenuSkeleton>("menu", {
     content_type: "menu",
     include: 2,
     limit: 1,

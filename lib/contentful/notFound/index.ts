@@ -1,8 +1,8 @@
-import { contentfulClient } from "../client";
+import { getEntries } from "../client";
 import { NotFoundContent, NotFoundSkeleton } from "./types";
 
 export async function getNotFoundContent(): Promise<NotFoundContent> {
-  const entries = await contentfulClient.getEntries<NotFoundSkeleton>({
+  const entries = await getEntries<NotFoundSkeleton>("notFoundPage", {
     content_type: "notFoundPage",
     limit: 1,
   });

@@ -1,10 +1,10 @@
-import { contentfulClient } from "../client";
+import { getEntries } from "../client";
 import type { SectionBlockEntry } from "@/lib/contentful/types";
 import type { CtaEntry } from "@/lib/contentful/heroSection/types";
 import type { ContactSectionSkeleton, ContactSectionContent } from "./types";
 
 export async function getContactSection(): Promise<ContactSectionContent> {
-  const entries = await contentfulClient.getEntries<ContactSectionSkeleton>({
+  const entries = await getEntries<ContactSectionSkeleton>("contactSection", {
     content_type: "contactSection",
     include: 2,
     limit: 1,

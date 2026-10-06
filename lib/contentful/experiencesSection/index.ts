@@ -1,5 +1,5 @@
 import type { Asset } from "contentful";
-import { contentfulClient } from "../client";
+import { getEntries } from "../client";
 import type { SectionBlockEntry } from "@/lib/contentful/types";
 import {
   ExperiencesSectionSkeleton,
@@ -9,13 +9,11 @@ import {
 } from "./types";
 
 export async function getExperiencesSection(): Promise<ExperiencesSectionContent> {
-  const entries = await contentfulClient.getEntries<ExperiencesSectionSkeleton>(
-    {
-      content_type: "experienceSection",
-      include: 2,
-      limit: 1,
-    },
-  );
+  const entries = await getEntries<ExperiencesSectionSkeleton>("experienceSection", {
+    content_type: "experienceSection",
+    include: 2,
+    limit: 1,
+  });
   const section = entries.items[0];
 
   if (!section) {
