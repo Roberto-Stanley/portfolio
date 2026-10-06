@@ -45,6 +45,8 @@ export default async function HeroSection() {
                   shape={action.shape}
                   icon={action.icon}
                   iconPosition={action.iconPosition}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {action.title}
                 </Button>
