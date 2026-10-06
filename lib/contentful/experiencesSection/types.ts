@@ -3,6 +3,9 @@ import type {
   SectionBlockSkeleton,
   SectionBlockContent,
 } from "@/lib/contentful/types";
+import type { StatSkeleton, StatEntry } from "@/lib/contentful/aboutSection/types";
+
+export type { StatSkeleton, StatEntry };
 
 export interface ExperienceSkeleton extends EntrySkeletonType {
   contentTypeId: "experience";
@@ -28,6 +31,8 @@ export interface ExperiencesSectionSkeleton extends EntrySkeletonType {
     experienceItems: EntryFieldTypes.Array<
       EntryFieldTypes.EntryLink<ExperienceSkeleton>
     >;
+    stats?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<StatSkeleton>>;
+    renderStats: EntryFieldTypes.Boolean;
   };
 }
 
@@ -42,7 +47,15 @@ export type ExperienceContent = {
   endedAt?: string;
 };
 
+export type StatContent = {
+  value: string;
+  label: string;
+  icon?: string;
+};
+
 export type ExperiencesSectionContent = {
   sectionBlock?: SectionBlockContent;
   experienceItems: ExperienceContent[];
+  stats: StatContent[];
+  renderStats: boolean;
 };

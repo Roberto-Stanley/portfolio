@@ -5,6 +5,7 @@ import {
   ExperiencesSectionSkeleton,
   ExperiencesSectionContent,
   ExperienceEntry,
+  StatEntry,
 } from "./types";
 
 export async function getExperiencesSection(): Promise<ExperiencesSectionContent> {
@@ -18,10 +19,10 @@ export async function getExperiencesSection(): Promise<ExperiencesSectionContent
   const section = entries.items[0];
 
   if (!section) {
-    return { experienceItems: [] };
+    return { experienceItems: [], stats: [], renderStats: false };
   }
 
-  const { sectionBlock, experienceItems } = section.fields;
+  const { sectionBlock, experienceItems, stats, renderStats } = section.fields;
 
   const resolvedSectionBlock = sectionBlock
     ? {
@@ -51,8 +52,18 @@ export async function getExperiencesSection(): Promise<ExperiencesSectionContent
       };
     });
 
+  const resolvedStats = (stats ?? [])
+    .filter((item): item is StatEntry => "fields" in item)
+    .map(({ fields }) => ({
+      value: fields.value,
+      label: fields.title,
+      icon: fields.icon,
+    }));
+
   return {
     sectionBlock: resolvedSectionBlock,
     experienceItems: resolvedExperienceItems,
+    stats: resolvedStats,
+    renderStats,
   };
 }
