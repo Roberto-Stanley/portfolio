@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import AnimationBlur from "@/app/components/animationBlur";
 import Container from "@/app/components/container";
 import Button from "@/app/components/button";

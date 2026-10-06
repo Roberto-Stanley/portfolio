@@ -1,13 +1,14 @@
-import { contentfulClient } from "../client";
+import { getEntries } from "../client";
 import type { SectionBlockEntry } from "@/lib/contentful/types";
 import { AboutSectionSkeleton, AboutSectionContent, StatEntry } from "./types";
 
 export async function getAboutSection(): Promise<AboutSectionContent> {
-  const entries = await contentfulClient.getEntries<AboutSectionSkeleton>({
+  const entries = await getEntries<AboutSectionSkeleton>("aboutMeSection", {
     content_type: "aboutMeSection",
     include: 2,
     limit: 1,
   });
+
   const section = entries.items[0];
 
   if (!section) {

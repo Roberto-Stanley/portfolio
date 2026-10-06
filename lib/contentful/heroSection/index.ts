@@ -1,4 +1,4 @@
-import { contentfulClient } from "../client";
+import { getEntries } from "../client";
 import {
   HeroSectionSkeleton,
   TypingAnimationEntry,
@@ -7,7 +7,7 @@ import {
 } from "./types";
 
 export async function getHeroSection(): Promise<HeroSectionContent> {
-  const entries = await contentfulClient.getEntries<HeroSectionSkeleton>({
+  const entries = await getEntries<HeroSectionSkeleton>("heroSection", {
     content_type: "heroSection",
     include: 2,
     limit: 1,
