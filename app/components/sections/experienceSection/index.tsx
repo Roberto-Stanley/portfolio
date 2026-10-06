@@ -7,7 +7,7 @@ import ExperienceCard from "./experienceCard";
 import { getExperiencesSection } from "@/lib/contentful/experiencesSection";
 
 export default async function ExperienceSection() {
-  const { sectionBlock, experienceItems } = await getExperiencesSection();
+  const { sectionBlock, experienceItems, stats, renderStats } = await getExperiencesSection();
 
   const experiences = experienceItems.map(
     ({
@@ -85,7 +85,7 @@ export default async function ExperienceSection() {
           </div>
         </div>
 
-        <StatsBar />
+        {renderStats && <StatsBar stats={stats} />}
       </Container>
     </section>
   );
